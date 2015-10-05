@@ -1,0 +1,74 @@
+.welcome-holder .top-bar .btn-setup {
+  font-family: 'opensans-semibold-webfont'; }
+
+.welcome-holder .welcome-mid-holder .project-holder .project-inner-holder .project-title-holder {
+  font-family: 'opensans-regular-webfont'; }
+
+.welcome-holder .top-bar .btn-setup {
+  font-size: 16px; }
+
+.welcome-holder .welcome-mid-holder .project-holder .project-inner-holder .project-title-holder {
+  font-size: 16px; }
+
+.welcome-holder .top-bar .btn-setup {
+  background-color: #ff5a5f;
+  border: none;
+  height: 42px;
+  padding-left: 40px;
+  padding-right: 40px;
+  cursor: pointer; }
+
+.welcome-holder .top-bar .btn-setup:hover, .welcome-holder .welcome-mid-holder .project-holder .project-inner-holder:hover {
+  -webkit-box-shadow: 0 0 4px #87919f;
+  -moz-box-shadow: 0 0 4px #87919f;
+  -o-box-shadow: 0 0 4px #87919f;
+  -ms-box-shadow: 0 0 4px #87919f;
+  box-shadow: 0 0 4px #87919f; }
+
+.welcome-holder .top-bar .btn-setup:active, .welcome-holder .welcome-mid-holder .project-holder .project-inner-holder:active {
+  box-shadow: none; }
+
+.welcome-holder .top-bar {
+  height: 46px;
+  background-color: #fff;
+  line-height: 46px;
+  width: 100%; }
+
+.welcome-holder .top-bar {
+  overflow: hidden; }
+  .welcome-holder .top-bar .btn-setup {
+    height: 36px;
+    display: block;
+    margin: 5px 15px; }
+
+.welcome-holder .welcome-mid-holder {
+  width: 1024px;
+  margin: 0 auto;
+  height: calc(100% - 40px);
+  padding-bottom: 45px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-top: 20px; }
+  .welcome-holder .welcome-mid-holder .project-holder {
+    text-align: left;
+    height: 250px;
+    padding: 10px; }
+    .welcome-holder .welcome-mid-holder .project-holder .project-inner-holder {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #e4e4e4;
+      background-color: #fff;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -o-border-radius: 4px;
+      -ms-border-radius: 4px;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 15px; }
+      .welcome-holder .welcome-mid-holder .project-holder .project-inner-holder .project-title-holder {
+        height: 40px;
+        width: 100%;
+        color: #87919f; }
+      .welcome-holder .welcome-mid-holder .project-holder .project-inner-holder .project-share-icon {
+        font-size: 25px;
+        color: #87919f; }

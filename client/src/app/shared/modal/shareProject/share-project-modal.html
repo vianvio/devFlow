@@ -1,0 +1,39 @@
+<script type="text/ng-template" id="share-project.html">
+    <div class="close-button fa fa-times" ng-click="cancel()"></div>
+    <div class="modal-header">
+        <div class="modal-title">Share Project</div>
+    </div>
+    <div class="modal-body">
+        <form name="shareProjectForm" id="new-project-form" class="form position-relative" role="form">
+            <alert ng-if='createFailed && !bShowSearchResult' type="danger">{{errorMsg}}</alert>
+            <div class="form-group user-search-holder position-relative" ng-class="{'has-error': submitted && shareProjectForm.username.$invalid}">
+                <input class="form-control user-search" name="username" placeholder='User Name' autocomplete='off' ng-focus='searchUser()' ng-model="shareUserObj.username" ng-keyup='searchUser()'>
+                <button class="btn btn-success user-search-btn" ng-click="addUser()" ng-disabled='!bSearchable'>
+                    <span ng-if="!showSearchLoading">Share</span>
+                    <div ng-if="showSearchLoading">
+                        <div class="loader"></div>
+                    </div>
+                </button>
+            </div>
+            <div class='search-result-holder' ng-if='arrSearchedUsers.length > 0 && bShowSearchResult'>
+                <div class='search-result' ng-repeat='searchedUser in arrSearchedUsers track by $index' ng-click='chooseSearchedUser(searchedUser)'>
+                    <div class='search-result-name'>{{searchedUser.username}}</div>
+                    <div class='search-result-date'>Regested At : {{searchedUser.createdAt | date:'MM-dd-yyyy'}}</div>
+                </div>
+            </div>
+            <table class="table table-striped user-table">
+                <thead>
+                    <td>GUID</td>
+                    <td>Regist Date</td>
+                </thead>
+                <tbody>
+                    <tr ng-repeat='user in arrUsers track by $index'>
+                        <td>{{user.username}}</td>
+                        <td>{{user.createdAt | date:'MM-dd-yyyy'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="create-button submit-button" ng-click="close()">CLOSE</button>
+        </form>
+    </div>
+</script>

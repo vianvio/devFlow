@@ -1,0 +1,72 @@
+.filter-bar {
+  position: fixed;
+  height: 100%;
+  left: 0px;
+  width: 350px;
+  z-index: 1000;
+  border-right: solid 1px #dddddd;
+  -webkit-box-shadow: 5px 0 5px -2px #dddddd;
+  box-shadow: 5px 0 5px -2px #dddddd;
+}
+
+.filter-left {
+  float: left;
+  width: 300px;
+  padding-left: 20px;
+}
+
+.filter-top-holder {
+  float: left;
+  margin-top: 10px;
+  width: 100%;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+.filter-top-holder span {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.filter-arrow {
+  float: left;
+  width: 49px;
+  height: 30px;
+  font-size: 20px;
+  line-height: 35px;
+  cursor: pointer;
+}
+
+.animate-show {
+  left: 0px;
+  background-color: #efeff0;
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.2s;
+  transition: all linear 0.2s;
+}
+
+.animate-show.ng-hide {
+  left: -300px;
+  background-color: #d4d0c9;
+  display: block !important;
+}
+
+.category-holder {
+  float: left;
+  /*background-color: #d4d0c9;*/
+  width: 100%;
+  border-bottom: dashed 1px #817f80;
+  margin-bottom: 10px;
+}
+
+.category-holder span {
+  font-size: 18px;
+}
+
+.category-row {
+  float: left;
+  width: 100%;
+}

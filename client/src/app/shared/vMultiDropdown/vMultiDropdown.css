@@ -1,0 +1,51 @@
+.vMulti-holder input[type='text'] {
+  height: 24px;
+  font-size: 12px;
+  padding: 0px 5px 0px;
+}
+
+.vMulti-holder label{
+  max-width: none;
+}
+
+.vMulti-holder .input-group input {
+  background-color: #fff;
+}
+
+.vMulti-holder .dropdown-list {
+  /*width: 100%;*/
+  width: auto;
+  position: relative;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 4px;
+  top: 1px;
+  z-index: 1000;
+}
+
+.vMulti-holder .btnShowAll {
+  width: 100%;
+  height: 30px;
+  border-top: 1px solid #ccc;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.vMulti-holder .btnShowAll:hover{
+  background-color: #f0f0f0;
+}
+
+.vMulti-holder .dropdown-list .checkbox {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.vMulti-holder .input-group-btn i {
+  font-size: 12px;
+}
+
+.vMulti-holder .input-group-btn button {
+  padding: 1px 7px 1px 7px;
+  outline: none;
+}

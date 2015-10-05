@@ -1,0 +1,17 @@
+<nav class="navbar navbar-static-top" ng-controller="navbarCtrl">
+    <div class='logo pull-left' ng-click='turnToHomePage()'>Development Cooperation</div>
+  <!--   <div class='pull-left' ng-show="$root.currentUser">
+        <div class='nav-tab' ng-class='getHighlightedTab(0)'>Clients</div>
+        <div class='nav-tab' ng-class='getHighlightedTab(1)'>Templates</div>
+        <div class='nav-tab' ng-class='getHighlightedTab(2)'>Help</div>
+    </div> -->
+    <div class='pull-right nav-tool' ng-show="$root.currentUser">
+        <div class="logout-container pull-right" id="logout-container" ng-class="{'menu-active': showSignoutPanel}" ng-click="showSignoutMenu()">
+            <div class='user-tool fa fa-user' title='Logout'></div>
+            <div class="signout-dropdown-menu" ng-show="showSignoutPanel" ng-click="logout()">
+                Sign out
+            </div>
+        </div>
+        <div class='alarm-tool fa fa-bell pull-right'></div>
+    </div>
+</nav>

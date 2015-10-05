@@ -1,0 +1,363 @@
+input,
+textarea {
+  font-family: 'opensans-light-webfont'; }
+
+.hexagon-type-font, .hexagon-num {
+  font-family: 'opensans-semibold-webfont'; }
+
+input,
+textarea {
+  font-size: 12px; }
+
+.hexagon-type-font {
+  font-size: 20px; }
+
+.hexagon-num {
+  font-size: 24px; }
+
+.login-img, .inner-page-img, .pwc-logo-img, .ida-logo-img, .setup-client-img, .conduct-session-img, .create-decision-img, .session-animation-gif, .decision-animation-gif {
+  background-position: center;
+  background-repeat: no-repeat; }
+
+button:hover {
+  -webkit-box-shadow: 0 0 4px #87919f;
+  -moz-box-shadow: 0 0 4px #87919f;
+  -o-box-shadow: 0 0 4px #87919f;
+  -ms-box-shadow: 0 0 4px #87919f;
+  box-shadow: 0 0 4px #87919f; }
+
+button:active {
+  box-shadow: none; }
+
+.detail-left-selected, .session-left-selected {
+  background-color: #f6f6f6;
+  border-left: 5px solid #ff5a5f; }
+
+@font-face {
+  font-family: 'opensans-light-webfont';
+  src: url("../fonts/opensans-light-webfont.eot");
+  src: url("../fonts/opensans-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-light-webfont.woff") format("woff"), url("../fonts/opensans-light-webfont.woff2") format("woff2"), url("../fonts/opensans-light-webfont.ttf") format("truetype"), url("../fonts/opensans-light-webfont.svg#opensans-light-webfont") format("svg");
+  /* Legacy iOS */ }
+
+@font-face {
+  font-family: 'opensans-semibold-webfont';
+  src: url("../fonts/opensans-semibold-webfont.eot");
+  src: url("../fonts/opensans-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-semibold-webfont.woff") format("woff"), url("../fonts/opensans-semibold-webfont.woff2") format("woff2"), url("../fonts/opensans-semibold-webfont.ttf") format("truetype"), url("../fonts/opensans-semibold-webfont.svg#opensans-semibold-webfont") format("svg");
+  /* Legacy iOS */ }
+
+@font-face {
+  font-family: 'opensans-regular-webfont';
+  src: url("../fonts/opensans-regular-webfont.eot");
+  src: url("../fonts/opensans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-regular-webfont.woff") format("woff"), url("../fonts/opensans-regular-webfont.woff2") format("woff2"), url("../fonts/opensans-regular-webfont.ttf") format("truetype"), url("../fonts/opensans-regular-webfont.svg#opensans-regular-webfont") format("svg");
+  /* Legacy iOS */ }
+
+* {
+  vertical-align: baseline;
+  font-weight: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
+body {
+  background-color: #f6f6f6;
+  min-width: 1024px;
+  overflow: auto; }
+
+.ui-view-holder {
+  height: calc(100% - 57px); }
+
+a:focus {
+  outline: none; }
+
+input,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  box-shadow: none !important;
+  color: #323a45; }
+
+.overflow-hidden {
+  overflow: hidden; }
+
+.no-padding {
+  padding: 0; }
+
+.position-relative {
+  position: relative; }
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
+
+.margin-10 {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.margin-5 {
+  margin-top: 5px;
+  margin-bottom: 5px; }
+
+.no-margin {
+  margin: 0; }
+
+.padding-5 {
+  padding-bottom: 5px;
+  padding-top: 5px; }
+
+.full-height {
+  height: 100%; }
+
+.current-tab-line2 {
+  color: #ff5a5f;
+  display: inline-block; }
+  .current-tab-line2:after {
+    content: ' ';
+    display: block;
+    position: relative;
+    bottom: 2px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: 0;
+    border-top: 2px solid #ff5a5f; }
+
+.detail-left-selected {
+  padding-left: 10px !important;
+  color: #323a45 !important; }
+
+.session-left-selected {
+  padding-left: 25px !important;
+  color: #323a45 !important; }
+
+.session-left-selected .session-item-color-point {
+  background-color: #febc00 !important; }
+
+.hexagon-content {
+  width: 100%;
+  position: absolute;
+  color: #fff;
+  text-align: center; }
+
+.hexagon-type-icon {
+  top: -10px;
+  font-size: 20px; }
+
+.hexagon-type-font {
+  top: -12px; }
+
+.hexagon-num {
+  top: 13px; }
+
+.login-img {
+  background-image: url("../assets/images/Background.png"); }
+
+.inner-page-img {
+  background-image: url("../assets/images/InnerPageBG2.png"); }
+
+.pwc-logo-img {
+  background-image: url("../assets/images/PWCLogo.png"); }
+
+.ida-logo-img {
+  background-image: url("../assets/images/IDALogo.png"); }
+
+.setup-client-img {
+  background-image: url("../assets/images/SetupYourClient.png"); }
+
+.conduct-session-img {
+  background-image: url("../assets/images/ConductInterviewSessions.png"); }
+
+.create-decision-img {
+  background-image: url("../assets/images/CreatePreviewDecisions.png"); }
+
+.session-animation-gif {
+  background-image: url("../assets/images/SessionsAnimation.gif"); }
+
+.decision-animation-gif {
+  background-image: url("../assets/images/DecisionsAnimation.gif"); }
+
+.loader {
+  display: inline-block;
+  height: 22px !important;
+  width: 22px !important;
+  font-size: 10px;
+  margin: 0px auto;
+  margin-top: 3px;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: #ffffff;
+  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 0.5s infinite linear;
+  animation: load3 0.5s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0); }
+
+.loader:before {
+  width: 50%;
+  height: 50%;
+  background: #ffffff;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: ''; }
+
+.loader:after {
+  background: #ff5a5f;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+/**
+ * multiselectinput form
+ */
+.msi-seachbox {
+  text-indent: 5px; }
+
+.msi-dropdown {
+  display: none;
+  left: 0;
+  top: 0px;
+  position: absolute;
+  width: 100%;
+  z-index: 99; }
+
+.multiselect-parent .btn {
+  border-color: #e1e1e1; }
+
+.multiselect-parent > ul {
+  top: 31px;
+  max-height: 230px;
+  overflow: auto;
+  z-index: 99; }
+
+.multiselect-parent > ul > li.ng-scope {
+  height: 32px; }
+
+.multiselect-parent > ul > li.ng-scope > a > span:first-child {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid #ff5a5f;
+  color: #fff;
+  font-size: 13px;
+  display: block;
+  float: left;
+  margin-right: 13px;
+  line-height: 16px;
+  text-indent: 1px;
+  top: 1px !important;
+  position: relative; }
+
+.multiselect-parent > ul > li.ng-scope > a > span:first-child.glyphicon-ok {
+  background: #ff5a5f; }
+
+.dropdown-menu {
+  min-width: 0px; }
+
+.dropdown-menu > li > a {
+  cursor: pointer; }
+
+.msi-dropdown > .multiselect-parent > ul {
+  top: 16px; }
+
+.dropdown-menu.dropdown-menu-form li:nth-child(1),
+.dropdown-menu.dropdown-menu-form li:nth-child(2) {
+  float: left; }
+
+.dropdown-menu.dropdown-menu-form li:nth-child(3) {
+  clear: both; }
+
+.loading-modal {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  z-index: 9999; }
+  .loading-modal .global-loader {
+    top: 40%;
+    left: 50%;
+    display: inline-block;
+    height: 22px !important;
+    width: 22px !important;
+    font-size: 10px;
+    margin: 0px auto;
+    margin-top: 3px;
+    text-indent: -9999em;
+    width: 11em;
+    height: 11em;
+    border-radius: 50%;
+    background: #ff5a5f;
+    background: -moz-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
+    background: -webkit-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
+    background: -o-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
+    background: -ms-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
+    background: linear-gradient(to right, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
+    position: relative;
+    -webkit-animation: load3 0.3s infinite linear;
+    animation: load3 0.3s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0); }
+  .loading-modal .global-loader:before {
+    width: 50%;
+    height: 50%;
+    background: #ff5a5f;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: ''; }
+  .loading-modal .global-loader:after {
+    background: #ffffff;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0; }
+
+/**
+ * multiselectinput form end
+ */

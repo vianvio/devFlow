@@ -1,0 +1,84 @@
+@import '../../mixin';
+.project-holder {
+    .top-bar {
+        @extend %top-bar;
+        overflow: hidden;
+        line-height: normal;
+        .btn-setup {
+            @extend %btn-common;
+            height: 36px;
+            margin: 5px 0px 5px 15px;
+            &[disabled] {
+                cursor: not-allowed;
+                box-shadow: none;
+            }
+        }
+    }
+    .project-mid-holder {
+        text-align: center;
+        width: 100%;
+        height: calc(100% - #{$foot-height});
+        padding-bottom: $foot-height + 5; // for foot bar
+        overflow-x: hidden;
+        overflow-y: auto;
+        .project-file-list-holder {
+            width: 300px;
+            overflow: auto;
+            @include box-shadow(-5px 0px 10px $ida-e4e inset);
+        }
+        .project-file-middle {
+            width: calc(100% - 655px);
+            height: 100%;
+        }
+        .project-file-tab-holder {
+            height: 30px;
+            width: 100%;
+        }
+        .project-file-content-holder {
+            width: 100%;
+            height: calc(100% - 30px);
+            .project-file-content-editor {
+                height: 100%;
+                text-align: left;
+            }
+            .ace_print-margin {
+                display: none;
+            }
+        }
+        .project-file-info-holder {
+            width: 350px;
+            border-bottom: 1px solid $ida-e4e;
+            padding: 15px;
+            .row {
+                margin: 5px 0 5px 0;
+            }
+            .project-file-info {
+                @extend %font-14-light;
+                color: $ida-879;
+                text-align: left;
+            }
+            .project-file-info-title {
+                text-align: right;
+            }
+            .project-file-info-content {}
+        }
+        .project-team-info-holder {
+            width: 340px;
+            background-color: $ida-323;
+            margin: 5px;
+            padding: 5px 5px 0 5px;
+            overflow: auto;
+            .project-team-info {
+                color: $ida-fff;
+                @extend %font-10-regular;
+                text-align: left;
+            }
+        }
+        .project-team-folder-mode {
+            height: calc(100% - 166px);
+        }
+        .project-team-file-mode {
+            height: calc(100% - 241px);
+        }
+    }
+}

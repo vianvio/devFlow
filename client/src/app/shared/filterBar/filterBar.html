@@ -1,0 +1,40 @@
+<div ng-controller='filterBarController' class='filter-bar animate-show' ng-hide='collapse'>
+  <div class='filter-left'>
+    <div class='filter-top-holder'>
+      <span>Filters</span>
+    </div>
+    <div class='category-holder'>
+      <span>Category</span>
+      <div class='form-group category-row '>
+        <label>Level 1</label>
+        <select class='form-control'>
+          <option>All</option>
+        </select>
+      </div>
+      <div class='form-group category-row '>
+        <label>Level 2</label>
+        <select class='form-control'>
+          <option>All</option>
+        </select>
+      </div>
+      <div class='form-group category-row '>
+        <label>Level 3</label>
+        <select class='form-control'>
+          <option>All</option>
+        </select>
+      </div>
+      <div class='form-group category-row '>
+        <label>Level 4</label>
+        <select class='form-control'>
+          <option>All</option>
+        </select>
+      </div>
+    </div>
+
+    <div class='btn-holder text-center'>
+    	<button class='btn btn-danger'>Reset</button>
+    	<button class='btn btn-primary'>Apply</button>
+    </div>
+  </div>
+  <div ng-class="collapse ? 'glyphicon-circle-arrow-right' : 'glyphicon-circle-arrow-left'" class='filter-arrow glyphicon text-center' ng-click='showFilter()'></div>
+</div>

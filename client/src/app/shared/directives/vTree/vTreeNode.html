@@ -1,0 +1,4 @@
+<div class='' ng-repeat='node in nodes track by $index | orderBy : node.levelIndex'>
+    <span>{{node.name}}</span>
+    <vtreenode nodes='node.nodes'></vtreenode>
+</div>

@@ -1,0 +1,23 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "redisDS": {
+    "name": "redisDS",
+    "connector": "memory"
+  },
+  "mongoDB": {
+    "host": "127.0.0.1",
+    "port": 27017,
+    "database": "devCooperation",
+    "name": "mongoDB",
+    "connector": "mongodb"
+  },
+  "projectFile": {
+    "name": "projectFile",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./server/uploads"
+  }
+}

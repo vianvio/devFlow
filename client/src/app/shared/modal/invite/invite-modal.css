@@ -1,0 +1,78 @@
+.invite-modal-form .modal-dialog {
+  height: 90%;
+  width: 620px; }
+  .invite-modal-form .modal-dialog .modal-content {
+    width: 100%; }
+  .invite-modal-form .modal-dialog .modal-body {
+    height: 500px;
+    padding: 0px; }
+    .invite-modal-form .modal-dialog .modal-body .invite-info {
+      width: 50%;
+      height: 425px;
+      text-align: right;
+      border-right: 1px solid #e1e1e1;
+      float: left;
+      padding-top: 25px;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-left: 0px; }
+      .invite-modal-form .modal-dialog .modal-body .invite-info .input-info {
+        border-radius: 5px;
+        border-color: #e1e1e1;
+        color: #323a45;
+        border: 1px solid #ccc;
+        height: 34px;
+        width: 100%;
+        padding-left: 10px; }
+      .invite-modal-form .modal-dialog .modal-body .invite-info .btn-addusers {
+        border: 1px solid #ff5a5f;
+        height: 42px;
+        color: #ff5a5f;
+        display: inline-block;
+        font-size: 18px;
+        text-align: center;
+        padding: 6px 12px;
+        vertical-align: middle;
+        border-radius: 5px;
+        background-color: #fff;
+        width: 120px; }
+      .invite-modal-form .modal-dialog .modal-body .invite-info .btn-addusers:hover {
+        box-shadow: 1px 1px 5px #ff5a5f !important; }
+      .invite-modal-form .modal-dialog .modal-body .invite-info .infofill {
+        margin-bottom: 10px; }
+      .invite-modal-form .modal-dialog .modal-body .invite-info .alert-meg {
+        text-align: left;
+        padding: 10px; }
+    .invite-modal-form .modal-dialog .modal-body .invite-user {
+      position: relative;
+      z-index: 1;
+      width: 50%;
+      height: 425px;
+      overflow-x: hidden;
+      word-break: break-all;
+      overflow-y: auto;
+      float: left;
+      padding-top: 25px;
+      padding-left: 10px;
+      padding-right: 10px; }
+    .invite-modal-form .modal-dialog .modal-body .invite-user:active {
+      background-color: #fff; }
+    .invite-modal-form .modal-dialog .modal-body .invite-user:hover {
+      background-color: #fff; }
+    .invite-modal-form .modal-dialog .modal-body .done-button {
+      position: relative;
+      left: 50%;
+      margin-left: -60px; }
+    .invite-modal-form .modal-dialog .modal-body .font-userinfo {
+      color: #a3a3a3;
+      font-size: 14px; }
+    .invite-modal-form .modal-dialog .modal-body .font-head {
+      font-size: 22px;
+      color: #a3a3a3; }
+    .invite-modal-form .modal-dialog .modal-body .font-username {
+      font-size: 20px; }
+    .invite-modal-form .modal-dialog .modal-body .remove-link {
+      color: #ff5a5f;
+      font-size: 14px;
+      text-decoration: underline;
+      cursor: pointer; }

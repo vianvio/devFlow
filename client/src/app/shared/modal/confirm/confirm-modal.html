@@ -1,0 +1,15 @@
+<script type="text/ng-template" id="confirm-modal.html">
+<div class="close-button fa fa-times" ng-click="cancel()"></div>
+    <form name="confirmForm" id="confirm-form" class="form" role="form">
+    <div class="modal-body">
+        <div class="confirm-message">{{confirmMessage}}</div>
+        <button class="submit-button ok " ng-click="confirmEvent()">
+                <span ng-if="!showLoading">OK</span>
+                <div ng-if="showLoading">
+                    <div class="loader"></div>
+                </div>
+        </button>
+        <button class="submit-button  cancel" ng-click="cancel()">Cancel</button>
+    </div>
+    <form>
+</script>

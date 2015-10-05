@@ -1,0 +1,41 @@
+<script type="text/ng-template" id="invite-modal.html">
+    <div class="close-button fa fa-times" ng-click="cancel()"></div>
+    <div class="modal-header">
+        <div class="modal-title">Invite Users to "ABC Chemicals"</div>
+    </div>
+    <div class="modal-body">
+		<form name="inviteForm" id="invite-form" class="form" role="form">
+		    <div class="invite-info">
+                <alert ng-if='createFailed' type="danger" class="alert-meg">{{errorMsg}}</alert>
+		    	<div class="infofill">
+      			<input type="text" class="input-info" placeholder="Enter GUID..." ng-model="accountNum"  />
+      			</div>
+      			<input type="button"  class="btn-addusers" value="Add Users" ng-click="addInviteUser()"/>
+		    </div>
+		      			
+		    <div class="invite-user">
+		    	<div class="font-head">Total User: {{inviters.length}}</div>
+		    	<div>
+		    		<span class="font-username">{{hostuser.name}}</span>
+		    		<br/>
+		    		<span class="font-userinfo">{{hostuser.account}}</span>
+		    		<br/>
+		    		<span class="font-userinfo">{{hostuser.power}}</span>
+		    		<br/>
+		    	</div>
+		    	<div ng-repeat="inviter in inviters">
+		    		<span class="font-username">{{inviter.name}}</span>
+		    		<br/>
+		    		<span class="font-userinfo">{{inviter.account}}</span>
+		    		<br/>
+		    		<span class="font-userinfo">{{inviter.power}}</span>
+		    		<br/>
+		    		<a ng-click="removeInvitedUser(inviter.account)" class="remove-link">Remove</a>
+		    	</div>
+		    </div>
+		    <button class="submit-button done-button" ng-click="cancel()">
+		            DONE
+		    </button>
+		</form>
+    </div>
+</script>

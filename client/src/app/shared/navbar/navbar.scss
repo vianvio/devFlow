@@ -1,0 +1,81 @@
+@import '../../mixin';
+.navbar {
+    width: 100%;
+    background-color: $ida-323;
+    margin-bottom: 0px;
+    padding: 0 15px 0 15px;
+    .logo {
+        background-repeat: no-repeat;
+        background-position: center left;
+        height: $nav-height;
+        cursor: pointer;
+        @extend %font-24-light;
+        color: $ida-fff;
+        line-height: $nav-height;
+    }
+    .nav-tool {
+        margin-right: -7px;
+    }
+    .nav-tab {
+        @extend %font-16-regular;
+        color: $ida-879;
+        line-height: $nav-height;
+        cursor: pointer;
+        margin: 0 30px 0 30px;
+        display: inline-block;
+    }
+    .nav-tab-highlight {
+        color: $ida-fff;
+    }
+    .alarm-tool {
+        @extend %tool-icon;
+        color: $ida-fff;
+        margin-top: 15px;
+        margin-right: 15px;
+        border: 1px solid $ida-fff;
+        @include border-radius(4px);
+    }
+    .logout-container {
+        position: relative;
+        width: 41px;
+        height: 41px;
+        margin-top: 7px;
+        // background: rgb(249, 249, 249);
+        &:hover {
+            background: rgb(249, 249, 249);
+            cursor: pointer;
+        }
+        .signout-dropdown-menu {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+            position: absolute;
+            background-color: red;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            right: 0px;
+            width: 180px;
+            height: 38px;
+            color: #29a6ba;
+            top: 40px;
+            background: #f9f9f9;
+            color: $ida-323;
+            line-height: 38px;
+            padding-left: 20px;
+
+            &:hover {
+                color: $ida-ff5;
+            }
+        }
+        .user-tool {
+            background-color: $ida-fff;
+            color: $ida-beb;
+            @include border-radius(13px);
+            @extend %tool-icon;
+            margin-top: 7px;
+            margin-left: 8px;
+        }
+    }
+    .menu-active {
+        background-color: rgb(249, 249, 249);
+    }
+}

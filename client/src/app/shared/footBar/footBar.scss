@@ -1,0 +1,20 @@
+@import '../../mixin';
+.foot-bottom {
+    position: fixed;
+    height: $foot-height;
+    width: 100%;
+    background-color: $ida-fff;
+    bottom: 0px;
+    text-align: center;
+    line-height: 40px;
+    @extend %font-14-light;
+    @include box-shadow(0 -1px 1px $ida-fff);
+    border-top: 1px solid $ida-e4e;
+    .foot-img {
+        height: 30px;
+        width: 38px;
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+    }
+}

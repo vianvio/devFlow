@@ -1,0 +1,26 @@
+.foot-bottom {
+  font-family: 'opensans-light-webfont'; }
+
+.foot-bottom {
+  font-size: 14px; }
+
+.foot-bottom {
+  position: fixed;
+  height: 40px;
+  width: 100%;
+  background-color: #fff;
+  bottom: 0px;
+  text-align: center;
+  line-height: 40px;
+  -webkit-box-shadow: 0 -1px 1px #fff;
+  -moz-box-shadow: 0 -1px 1px #fff;
+  -o-box-shadow: 0 -1px 1px #fff;
+  -ms-box-shadow: 0 -1px 1px #fff;
+  box-shadow: 0 -1px 1px #fff;
+  border-top: 1px solid #e4e4e4; }
+  .foot-bottom .foot-img {
+    height: 30px;
+    width: 38px;
+    position: absolute;
+    right: 10px;
+    bottom: 5px; }

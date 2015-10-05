@@ -1,0 +1,55 @@
+@import '../../../mixin';
+.vTreeNode-bar {
+    @extend %font-12-regular;
+    color: $ida-879;
+    text-align: left;
+    min-width: 0px;
+    padding-left: 15px;
+    line-height: 20px;
+    cursor: pointer;
+    height: 20px;
+    overflow: hidden;
+}
+
+.vTreeNode-folder {
+    .vTreeNode-title:hover {
+        border-bottom: 1px dashed $ida-879;
+    }
+    &:before {
+        content: ' ';
+        display: inline-block;
+        width: 0px;
+        height: 0px;
+        border: 5px solid $ida-879;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        border-top-color: transparent;
+    }
+}
+
+.vTreeNode-file {
+    overflow: visible;
+    .vTreeNode-title:hover {
+        border: 1px solid $ida-e4e;
+        background-color: $ida-f6f;
+        padding: 2px;
+        margin-left: -3px;
+        margin-top: -3px;
+        @include box-shadow(0 0 5px $ida-879);
+    }
+}
+
+.vTreeNode-folder.vTreeNode-open {
+    height: auto;
+    overflow: visible;
+    &:before {
+        content: ' ';
+        display: inline-block;
+        width: 0px;
+        height: 0px;
+        border: 4px solid $ida-dcd;
+        border-left-color: transparent;
+        border-top-color: transparent;
+        margin-right: 2px;
+    }
+}

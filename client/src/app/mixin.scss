@@ -1,0 +1,382 @@
+%font-light {
+    font-family: 'opensans-light-webfont';
+}
+
+%font-semibold {
+    font-family: 'opensans-semibold-webfont';
+}
+
+%font-regular {
+    font-family: 'opensans-regular-webfont';
+}
+
+%font-14-light {
+    font-size: 14px;
+    @extend %font-light;
+}
+
+%font-12-light {
+    font-size: 12px;
+    @extend %font-light;
+}
+
+%font-10-semibold {
+    font-size: 10px;
+    @extend %font-semibold;
+}
+
+%font-10-light {
+    font-size: 10px;
+    @extend %font-light;
+}
+
+%font-12-semibold {
+    font-size: 12px;
+    @extend %font-semibold;
+}
+
+%font-14-semibold {
+    font-size: 14px;
+    @extend %font-semibold;
+}
+
+%font-16-semibold {
+    font-size: 16px;
+    @extend %font-semibold;
+}
+
+%font-16-light {
+    font-size: 16px;
+    @extend %font-light;
+}
+
+%font-18-semibold {
+    font-size: 18px;
+    @extend %font-semibold;
+}
+
+%font-18-light {
+    font-size: 18px;
+    @extend %font-light;
+}
+
+%font-18-regular {
+    font-size: 18px;
+    @extend %font-regular;
+}
+
+%font-20-semibold {
+    font-size: 20px;
+    @extend %font-semibold;
+}
+
+%font-24-semibold {
+    font-size: 24px;
+    @extend %font-semibold;
+}
+
+%font-28-semibold {
+    font-size: 28px;
+    @extend %font-semibold;
+}
+
+%font-35-light {
+    font-size: 35px;
+    @extend %font-light;
+}
+
+%font-24-light {
+    font-size: 24px;
+    @extend %font-light;
+}
+
+%font-14-regular {
+    font-size: 14px;
+    @extend %font-regular;
+}
+
+%font-16-regular {
+    font-size: 16px;
+    @extend %font-regular;
+}
+
+%font-12-regular {
+    font-size: 12px;
+    @extend %font-regular;
+}
+
+%font-10-regular {
+    font-size: 10px;
+    @extend %font-regular;
+}
+
+%font-20-regular {
+    font-size: 20px;
+    @extend %font-regular;
+}
+
+
+%font-24-regular {
+    font-size: 24px;
+    @extend %font-regular;
+}
+
+$ida-ff5: #ff5a5f;
+$ida-323: #323a45;
+$ida-879: #87919f;
+$ida-ece: #ecedf0;
+$ida-beb: #bebebe;
+$ida-f6f: #f6f6f6;
+$ida-fff: #fff;
+$ida-fc9: #fc999b;
+$ida-e4e: #e4e4e4;
+$ida-e1e: #e1e1e1;
+$ida-a3a: #a3a3a3;
+$ida-858: #85898e;
+$ida-383: #383c42;
+$ida-ffc: #ffce54;
+$ida-69b: #69b5a3;
+$ida-ae3: #ae393c;
+$ida-dcd: #dcdcdc;
+$ida-0e9: #0e967f;
+$ida-9c9: #9c9b9d;
+$ida-feb: #febc00;
+$nav-height: 56px;
+$foot-height: 40px;
+$top-bar-height: 46px;
+$detail-holder-left: 275px; // (1366-1083)/1366
+$screen-min-width: 768px;
+// prefixer
+$prefix-for-webkit: true !default;
+$prefix-for-mozilla: true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera: true !default;
+$prefix-for-spec: true !default;
+//----------------------------
+@mixin prefixer ($property, $value, $prefixes) {
+    @each $prefix in $prefixes {
+        @if $prefix==webkit and $prefix-for-webkit==true {
+            -webkit-#{$property}: $value;
+        }
+        @else if $prefix==moz and $prefix-for-mozilla==true {
+            -moz-#{$property}: $value;
+        }
+        @else if $prefix==ms and $prefix-for-microsoft==true {
+            -ms-#{$property}: $value;
+        }
+        @else if $prefix==o and $prefix-for-opera==true {
+            -o-#{$property}: $value;
+        }
+        @else if $prefix==spec and $prefix-for-spec==true {
+            #{$property}: $value;
+        }
+        @else {
+            @warn "Unrecognized prefix: #{$prefix}";
+        }
+    }
+}
+
+@mixin box-shadow($shadow...) {
+    @include prefixer(box-shadow, $shadow, webkit moz o ms spec);
+}
+
+@mixin box-sizing($type:border-box) {
+    // border-box | padding-box | content-box
+    @include prefixer(box-sizing, $type, webkit moz o ms spec);
+}
+
+@mixin transform($property...) {
+    @include prefixer(transform, $property, webkit moz o ms spec);
+}
+
+@mixin transition($property...) {
+    @include prefixer(transition, $property, webkit moz o ms spec);
+}
+
+@mixin border-radius($width...) {
+    @include prefixer(border-radius, $width, webkit moz o ms spec);
+}
+
+@mixin screen-center($selfWidth, $selfHeight, $horizontalOffset, $verticalOffset) {
+    @include vertical-center($selfHeight, $verticalOffset);
+    @include horizontal-center($selfWidth, $horizontalOffset);
+}
+
+@mixin vertical-center($selfHeight, $verticalOffset) {
+    position: relative;
+    top: 50%;
+    margin-top: -($selfHeight + $verticalOffset)/2;
+}
+
+@mixin horizontal-center($selfWith, $horizontalOffset) {
+    position: relative;
+    left: 50%;
+    margin-left: -($selfWith + $horizontalOffset)/2; // self.width/2
+}
+
+@mixin screen($res-min, $res-max) {
+    @media screen and ( min-width: $res-min) and ( max-width: $res-max) {
+        @content;
+    }
+}
+
+@mixin appearance($property...) {
+    @include prefixer(appearance, $property, webkit moz o ms spec);
+}
+
+@mixin textEllipsis($lineHeight) {
+    &:after {
+        content: '. . .';
+        position: absolute;
+        display: inline-block;
+        background-color: $ida-fff;
+        right: 0px;
+        bottom: 0px;
+        width: 34px;
+        height: $lineHeight;
+    }
+}
+
+%img-center-no-repeat {
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+%btn-common {
+    @extend %font-16-semibold;
+    @extend %click-effect;
+    background-color: $ida-ff5;
+    border: none;
+    height: 42px;
+    padding-left: 40px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+%click-effect {
+    &:hover {
+        @include box-shadow(0 0 4px $ida-879);
+    }
+    &:active {
+        box-shadow: none;
+    }
+}
+
+%top-bar {
+    height: $top-bar-height;
+    background-color: $ida-fff;
+    // @include box-shadow(0 -1px 1px $ida-fff);
+    line-height: $top-bar-height;
+    width: 100%;
+}
+
+%top-content {
+    color: $ida-323;
+    @extend %font-16-semibold;
+}
+
+%tool-icon {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+// common classes for detail pages ---start---
+%tab-line2 {
+    text-align: center;
+    padding: 0 10px 0 10px;
+    span {
+        cursor: pointer;
+    }
+}
+
+%top-content-left {
+    width: 100%;
+    padding-left: 15px;
+    height: 100%;
+    &:after {
+        content: ' ';
+        height: 100%;
+        width: 0;
+        position: absolute;
+        top: 0;
+        right: -1px;
+        border-right: 2px solid $ida-ece;
+        display: block;
+        z-index: 1;
+    }
+}
+
+%detail-left-holder {
+    background-color: $ida-323;
+    width: $detail-holder-left;
+}
+
+%detail-right-holder {
+    width: calc(100% - #{$detail-holder-left}); // 1083/1366;
+}
+
+%detail-left-border-bottom {
+    border-bottom: 1px solid $ida-858;
+}
+
+%detail-grey-bar {
+    background-color: $ida-ece;
+    .gray-bar-content {
+        @extend %font-14-semibold;
+        .content-count {
+            $content-count-height: 24px;
+            @include border-radius(4px);
+            @extend %font-12-semibold;
+            margin-left: 10px;
+            border: 1px solid $ida-beb;
+            width: $content-count-height;
+            height: $content-count-height;
+            line-height: $content-count-height;
+            text-align: center;
+            @include vertical-center($content-count-height, 0);
+            background-color: $ida-fff;
+        }
+    }
+}
+
+%hexagon {
+    position: relative;
+    width: 70px;
+    height: 40px;
+    &:before {
+        content: ' ';
+        display: block;
+        position: relative;
+        border-bottom: 20px solid;
+        width: 100%;
+        height: 0px;
+        bottom: 20px;
+        border-right: 35px solid transparent;
+        border-left: 35px solid transparent;
+    }
+    &:after {
+        content: ' ';
+        display: block;
+        position: relative;
+        border-top: 20px solid;
+        width: 100%;
+        height: 0px;
+        top: 20px;
+        border-right: 35px solid transparent;
+        border-left: 35px solid transparent;
+    }
+}
+
+%left-bar-selected {
+    background-color: $ida-f6f;
+    border-left: 5px solid $ida-ff5;
+}
+
+// common classes for detail pages ---end---
+// // prefix part
+// $login: 'a';
+// $welcome: 'b';
+// $

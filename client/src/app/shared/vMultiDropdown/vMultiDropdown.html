@@ -1,0 +1,24 @@
+<div class='vMulti-holder'>
+  <div class='input-group'>
+    <input type='text' class='form-control' readonly ng-model='itemChoosed' ng-disabled='bDisabled' />
+    <span class='input-group-btn'>
+      <button type="button" class="btn btn-default" ng-click='displayItemList()' ng-disabled='bDisabled'>
+        <i class='glyphicon glyphicon-triangle-bottom'></i>
+      </button>
+    </span>
+  </div>
+  <div class='dropdown-list' ng-show='showItemList'>
+    <input type='text' class='form-control' placeholder='Enter Text to Search' ng-model='itemFilter' />
+    <div class='checkbox no-margin'>
+      <label>
+        <input type='checkbox' ng-model='allChecked' ng-click='checkAll()' />(All)</label>
+    </div>
+    <div ng-repeat='item in (filteredItems = (arrData | filter:{name: itemFilter})) | limitTo: itemListLimit' class='checkbox no-margin'>
+      <label>
+        <input type='checkbox' ng-model='item.checked' ng-click='getItemList()' />{{item.name}}</label>
+    </div>
+    <div class='btnShowAll' ng-hide='bShowAllItem' ng-click='showAllItem()'>
+      Show All {{config.itemName}} <span class='glyphicon glyphicon-chevron-down'></span>
+    </div>
+  </div>
+</div>

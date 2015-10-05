@@ -1,0 +1,26 @@
+<script type="text/ng-template" id="new-project.html">
+    <div class="close-button fa fa-times" ng-click="cancel()"></div>
+    <div class="modal-header">
+        <div class="modal-title">New Project</div>
+    </div>
+    <div class="modal-body">
+        <form name="newProjectForm" id="new-project-form" class="form" role="form">
+            <alert ng-if='createFailed' type="danger">{{errorMsg}}</alert>
+            <div class="form-group" ng-class="{'has-error': submitted && newProjectForm.name.$invalid}">
+                <label for="project-name">Project Name</label>
+                <input class="form-control" id="project-name" name="name" ng-model="newProjectObj.name" required autofocus>
+            </div>
+            <div class="form-group" ng-class="{'has-error': submitted && newProjectForm.description.$invalid}">
+                <label for="project-description">Description</label>
+                <textarea class="form-control" id="project-description" name="description" rows=4 ng-model="newProjectObj.description" required>
+                </textarea>
+            </div>
+            <button class="create-button submit-button" ng-click="createProject()">
+                <span ng-if="!showLoading">CREATE</span>
+                <div ng-if="showLoading">
+                    <div class="loader"></div>
+                </div>
+            </button>
+        </form>
+    </div>
+</script>

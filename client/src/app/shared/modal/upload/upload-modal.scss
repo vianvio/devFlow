@@ -1,0 +1,35 @@
+@import '../../../mixin';
+.upload-form {
+    .modal-dialog {
+        height: 100%;
+        width: 800px;
+        .modal-content {
+            width: 100%;
+            @include screen-center(800px, 317px, 0, 100px);
+            .create-button {
+                @include horizontal-center(120px, 0);
+            }
+            .uploadZip {
+                visibility: hidden;
+                margin-bottom: 10px;
+                &:before {
+                    content: 'Choose File';
+                    @extend %btn-common;
+                    visibility: visible;
+                    color: #fff;
+                    background-color: $ida-ff5;
+                    @extend %font-14-light;
+                    padding: 6px 12px;
+                    text-align: center;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    position: relative;
+                }
+            }
+            textarea {
+                @extend %font-12-light;
+                color: $ida-323;
+            }
+        }
+    }
+}

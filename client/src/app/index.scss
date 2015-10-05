@@ -1,0 +1,447 @@
+@import 'mixin';
+@font-face {
+    font-family: 'opensans-light-webfont';
+    src: url('../fonts/opensans-light-webfont.eot');
+    src: url('../fonts/opensans-light-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/opensans-light-webfont.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/opensans-light-webfont.woff2') format('woff2'), url('../fonts/opensans-light-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/opensans-light-webfont.svg#opensans-light-webfont') format('svg');
+    /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'opensans-semibold-webfont';
+    src: url('../fonts/opensans-semibold-webfont.eot');
+    src: url('../fonts/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/opensans-semibold-webfont.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/opensans-semibold-webfont.woff2') format('woff2'), url('../fonts/opensans-semibold-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/opensans-semibold-webfont.svg#opensans-semibold-webfont') format('svg');
+    /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'opensans-regular-webfont';
+    src: url('../fonts/opensans-regular-webfont.eot');
+    src: url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/opensans-regular-webfont.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/opensans-regular-webfont.woff2') format('woff2'), url('../fonts/opensans-regular-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/opensans-regular-webfont.svg#opensans-regular-webfont') format('svg');
+    /* Legacy iOS */
+}
+
+* {
+    vertical-align: baseline;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    background-color: $ida-f6f;
+    min-width: 1024px;
+    overflow: auto;
+}
+
+.ui-view-holder {
+    height: calc(100% - #{$nav-height + 1px}); // 1px for small inaccuracy
+}
+
+a:focus {
+    outline: none;
+}
+
+input,
+textarea {
+    @include appearance(none);
+    box-shadow: none !important;
+    @extend %font-12-light;
+    color: $ida-323;
+}
+
+button {
+    @extend %click-effect;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.text-ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.margin-10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.margin-5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.padding-5 {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.current-tab-line2 {
+    color: $ida-ff5;
+    display: inline-block;
+    &:after {
+        content: ' ';
+        display: block;
+        position: relative;
+        bottom: 2px;
+        left: -10px;
+        width: calc(100% + 20px);
+        height: 0;
+        border-top: 2px solid $ida-ff5;
+    }
+}
+
+.detail-left-selected {
+    padding-left: 10px !important;
+    @extend %left-bar-selected;
+    color: $ida-323 !important;
+}
+
+.session-left-selected {
+    padding-left: 25px !important;
+    @extend %left-bar-selected;
+    color: $ida-323 !important;
+}
+
+.session-left-selected .session-item-color-point {
+    background-color: $ida-feb !important;
+}
+
+.hexagon-content {
+    width: 100%;
+    position: absolute;
+    color: $ida-fff;
+    text-align: center;
+}
+
+.hexagon-type-icon {
+    top: -10px;
+    font-size: 20px;
+}
+
+.hexagon-type-font {
+    top: -12px;
+    @extend %font-20-semibold;
+}
+
+.hexagon-num {
+    top: 13px;
+    @extend %font-24-semibold;
+}
+
+.login-img {
+    background-image: url("../assets/images/Background.png");
+    @extend %img-center-no-repeat
+}
+
+.inner-page-img {
+    background-image: url('../assets/images/InnerPageBG2.png');
+    @extend %img-center-no-repeat
+}
+
+.pwc-logo-img {
+    background-image: url("../assets/images/PWCLogo.png");
+    @extend %img-center-no-repeat
+}
+
+.ida-logo-img {
+    background-image: url('../assets/images/IDALogo.png');
+    @extend %img-center-no-repeat
+}
+
+.setup-client-img {
+    background-image: url('../assets/images/SetupYourClient.png');
+    @extend %img-center-no-repeat
+}
+
+.conduct-session-img {
+    background-image: url('../assets/images/ConductInterviewSessions.png');
+    @extend %img-center-no-repeat
+}
+
+.create-decision-img {
+    background-image: url('../assets/images/CreatePreviewDecisions.png');
+    @extend %img-center-no-repeat
+}
+
+.session-animation-gif {
+    background-image: url('../assets/images/SessionsAnimation.gif');
+    @extend %img-center-no-repeat
+}
+
+.decision-animation-gif {
+    background-image: url('../assets/images/DecisionsAnimation.gif');
+    @extend %img-center-no-repeat
+}
+
+.loader {
+    display: inline-block;
+    height: 22px !important;
+    width: 22px !important;
+    font-size: 10px;
+    margin: 0px auto;
+    margin-top: 3px;
+    text-indent: -9999em;
+    width: 11em;
+    height: 11em;
+    border-radius: 50%;
+    background: #ffffff;
+    background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+    position: relative;
+    -webkit-animation: load3 0.5s infinite linear;
+    animation: load3 0.5s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.loader:before {
+    width: 50%;
+    height: 50%;
+    background: #ffffff;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+}
+
+.loader:after {
+    background: #ff5a5f;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@-webkit-keyframes load3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+/**
+ * multiselectinput form
+ */
+
+.msi-seachbox {
+    text-indent: 5px;
+}
+
+.msi-dropdown {
+    display: none;
+    left: 0;
+    top: 0px;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+}
+
+.multiselect-parent .btn {
+    border-color: $ida-e1e;
+}
+
+.multiselect-parent > ul {
+    top: 31px;
+    max-height: 230px;
+    overflow: auto;
+    z-index: 99;
+}
+
+.multiselect-parent > ul > li.ng-scope {
+    height: 32px;
+}
+
+.multiselect-parent > ul > li.ng-scope > a > span:first-child {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1px solid $ida-ff5;
+    color: $ida-fff;
+    font-size: 13px;
+    display: block;
+    float: left;
+    margin-right: 13px;
+    line-height: 16px;
+    text-indent: 1px;
+    top: 1px !important;
+    position: relative;
+}
+
+.multiselect-parent > ul > li.ng-scope > a > span:first-child.glyphicon-ok {
+    background: $ida-ff5;
+}
+
+.dropdown-menu {
+    min-width: 0px;
+}
+
+.dropdown-menu >li > a {
+    cursor: pointer;
+}
+
+.msi-dropdown > .multiselect-parent > ul {
+    top: 16px;
+}
+
+// .dropdown-menu.dropdown-menu-form li.inactive a >.glyphicon {
+//     color: #ccc !important;
+// }
+// .dropdown-menu.dropdown-menu-form li.onactive a {
+//     color: #29a6ba !important;
+// }
+// .search-field-loading {
+//     background: url('../images/loading-small.gif') no-repeat center;
+//     position: absolute;
+//     top: -2px;
+//     right: 10px;
+//     z-index: 170;
+//     color: red;
+//     font-weight: normal;
+//     display: none;
+//     width: 40px;
+//     height: 40px;
+// }
+.dropdown-menu.dropdown-menu-form li:nth-child(1),
+.dropdown-menu.dropdown-menu-form li:nth-child(2) {
+    float: left;
+}
+
+.dropdown-menu.dropdown-menu-form li:nth-child(3) {
+    clear: both;
+}
+
+.loading-modal {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    z-index: 9999;
+    .global-loader {
+        top: 40%;
+        left: 50%;
+        display: inline-block;
+        height: 22px !important;
+        width: 22px !important;
+        font-size: 10px;
+        margin: 0px auto;
+        margin-top: 3px;
+        text-indent: -9999em;
+        width: 11em;
+        height: 11em;
+        border-radius: 50%;
+        background: #ff5a5f;
+        background: -moz-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
+        background: -webkit-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
+        background: -o-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
+        background: -ms-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
+        background: linear-gradient(to right, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
+        position: relative;
+        -webkit-animation: load3 0.3s infinite linear;
+        animation: load3 0.3s infinite linear;
+        -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+    .global-loader:before {
+        width: 50%;
+        height: 50%;
+        background: #ff5a5f;
+        border-radius: 100% 0 0 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+    }
+    .global-loader:after {
+        background: #ffffff;
+        width: 75%;
+        height: 75%;
+        border-radius: 50%;
+        content: '';
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+// .dropdown-menu.dropdown-menu-form {
+//     max-height: 360px;
+//     overflow: auto;
+// }
+// .multiselect-parent .glyphicon-ok.active {
+//     color: #fff;
+//     background-color: #33A0B6;
+//     line-height: inherit;
+// }
+// .dropdown-menu.dropdown-menu-form .radio,
+// .dropdown-menu.dropdown-menu-form .checkbox {
+//     margin-top: 0;
+//     margin-bottom: 0;
+// }
+
+/**
+ * multiselectinput form end
+ */

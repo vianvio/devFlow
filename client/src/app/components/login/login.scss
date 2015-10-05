@@ -1,0 +1,128 @@
+@import '../../mixin';
+.error-messages {
+    width: 380px;
+    border: 1px solid;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: 6px solid rgba(216, 221, 227, 0.9);
+    border-radius: 4px;
+    @extend %font-14-light;
+    color: $ida-323;
+}
+
+.login-container {
+    // height: 800px;
+    height: 100%;
+    // height: 800px;
+    .form-item-msg.alert {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
+    }
+    .form-signin {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: 6px solid rgba(216, 221, 227, 0.9);
+        border-radius: 4px;
+        width: 430px;
+        min-height: 320px;
+        margin-left: -215px;
+        margin-top: -160px;
+        background-color: $ida-fff;
+        .login-content {
+            @extend %font-24-light;
+            color: $ida-323;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .input-focus {
+            @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6));
+        }
+        .form-group {
+            width: 330px;
+            height: 40px;
+            margin: 0 auto;
+            margin-bottom: 15px;
+            .icon {
+                border: 1px solid #E4E4E4;
+                float: left;
+                height: 40px;
+                width: 40px;
+                line-height: 40px;
+                border-right-width: 0px;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                text-align: center;
+                color: $ida-ece;
+                font-size: 25px;
+            }
+            input {
+                @extend %font-16-light;
+                width: 290px;
+                float: left;
+                height: 40px;
+                border: 1px solid #E4E4E4;
+                border-left-width: 0px;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+            }
+            input::-webkit-input-placeholder {
+                color: $ida-e4e;
+            }
+            input::-moz-placeholder {
+                color: $ida-e4e;
+            }
+            input:-ms-input-placeholder {
+                color: $ida-e4e;
+            }
+            input:focus {
+                box-shadow: none;
+            }
+            button {
+                width: 330px;
+                height: 42px;
+                background-color: $ida-ff5;
+                border: 0px;
+                @extend %font-18-semibold;
+                color: $ida-fff;
+                margin-bottom: 10px;
+                margin-top: 10px;
+                outline: none !important;
+            }
+        }
+        .new-account-content {
+            text-align: center;
+            @extend %font-14-light;
+            text-decoration: underline;
+            color: $ida-ff5;
+            margin-top: 35px;
+            cursor: pointer;
+        }
+    }
+    .powered-content {
+        @extend %font-16-light;
+        color: $ida-323;
+        width: 100%;
+        position: fixed;
+        bottom: 60px;
+        .powered-content-holder {
+            display: table;
+            height: 30px;
+            margin: 0 auto;
+        }
+        span {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0 10px 0 10px;
+        }
+        .pwc-small-logo {
+            display: table-cell;
+            width: 38px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.new-project-form .modal-dialog .modal-content textarea {
+  font-family: 'opensans-light-webfont'; }
+
+.new-project-form .modal-dialog .modal-content textarea {
+  font-size: 12px; }
+
+.new-project-form .modal-dialog {
+  height: 100%; }
+  .new-project-form .modal-dialog .modal-content {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    margin-top: -208.5px;
+    position: relative;
+    left: 50%;
+    margin-left: -300px; }
+    .new-project-form .modal-dialog .modal-content .create-button {
+      position: relative;
+      left: 50%;
+      margin-left: -60px; }
+    .new-project-form .modal-dialog .modal-content textarea {
+      color: #323a45; }

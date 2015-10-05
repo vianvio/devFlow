@@ -1,0 +1,16 @@
+.confirm-modal .modal-dialog {
+  height: 100%; }
+  .confirm-modal .modal-dialog .confirm-message {
+    color: #a3a3a3;
+    font-size: 18px;
+    padding-bottom: 30px; }
+  .confirm-modal .modal-dialog .modal-content {
+    width: 100%; }
+    .confirm-modal .modal-dialog .modal-content .ok {
+      position: relative;
+      left: 50%;
+      margin-left: -125px; }
+    .confirm-modal .modal-dialog .modal-content .cancel {
+      position: relative;
+      left: 50%;
+      margin-left: 10px; }

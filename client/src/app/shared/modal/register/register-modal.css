@@ -1,0 +1,43 @@
+.register-form .modal-dialog .modal-content .non-pwc-account, .register-form .modal-dialog .modal-content .register-input {
+  font-family: 'opensans-light-webfont'; }
+
+.register-form .modal-dialog .modal-content .non-pwc-account {
+  font-size: 14px; }
+
+.register-form .modal-dialog .modal-content .register-input {
+  font-size: 16px; }
+
+.register-form .modal-dialog {
+  height: 100%;
+  width: 430px; }
+  .register-form .modal-dialog .modal-content {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    margin-top: -178.5px;
+    position: relative;
+    left: 50%;
+    margin-left: -215px; }
+    .register-form .modal-dialog .modal-content .create-button {
+      position: relative;
+      left: 50%;
+      margin-left: -165px;
+      margin-top: 10px;
+      width: 330px; }
+      .register-form .modal-dialog .modal-content .create-button:hover {
+        margin-top: 8px; }
+    .register-form .modal-dialog .modal-content .register-input {
+      height: 40px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -o-border-radius: 4px;
+      -ms-border-radius: 4px;
+      border-radius: 4px;
+      width: 330px;
+      margin: 0 auto; }
+    .register-form .modal-dialog .modal-content .non-pwc-account {
+      text-align: center;
+      text-decoration: underline;
+      color: #ff5a5f;
+      margin-top: 10px;
+      cursor: pointer; }

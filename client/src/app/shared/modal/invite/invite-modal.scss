@@ -1,0 +1,97 @@
+@import '../../../mixin';
+.invite-modal-form {
+    .modal-dialog {
+        height: 90%;
+        width: 620px;
+        .modal-content {
+            width: 100%;
+        }
+        .modal-body{
+            height: 500px;
+            padding: 0px;
+            .invite-info{
+                width: 50%;
+                height: 425px;
+                text-align: right;
+                border-right: 1px solid $ida-e1e;
+                float:left;
+                padding-top: 25px;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-left:0px;
+                .input-info{
+                    border-radius:5px;
+                    border-color:$ida-e1e;
+                    color:$ida-323;
+                    border:1px solid #ccc;
+                    height:34px;
+                    width:100%;
+                    padding-left:10px;
+                }
+                .btn-addusers{
+                    border:1px solid $ida-ff5;
+                    height:42px;
+                    color:$ida-ff5;
+                    display:inline-block;
+                    font-size:18px;
+                    text-align:center;
+                    padding:6px 12px;
+                    vertical-align:middle;
+                    border-radius:5px;
+                    background-color:$ida-fff;
+                    width:120px;
+                }
+                .btn-addusers:hover{
+                    box-shadow:  1px 1px 5px $ida-ff5 !important;
+                }
+                .infofill{
+                margin-bottom:10px;
+                }
+                .alert-meg{
+                    text-align:left;
+                    padding :10px;
+                }
+            }
+            .invite-user{
+                position:relative;
+                z-index:1;
+                width: 50%;
+                height: 425px;
+                overflow-x:hidden;
+                word-break:break-all;
+                overflow-y: auto;
+                float:left;
+                padding-top: 25px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .invite-user:active{
+                background-color:$ida-fff;
+            }
+            .invite-user:hover{
+                background-color:$ida-fff;
+            }
+            .done-button {
+                @include horizontal-center(120px, 0);     
+            }
+            .font-userinfo{
+                color:$ida-a3a;
+                font-size:14px;
+            }
+            .font-head{
+                font-size:22px;
+                color:$ida-a3a;
+            }
+            .font-username{
+                font-size: 20px;
+            }
+            .remove-link{
+                color:$ida-ff5;
+                font-size:14px;
+                text-decoration:underline;
+                cursor:pointer;
+            }
+
+        }
+    }
+}

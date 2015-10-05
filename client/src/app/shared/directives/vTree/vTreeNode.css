@@ -1,0 +1,55 @@
+.vTreeNode-bar {
+  font-family: 'opensans-regular-webfont'; }
+
+.vTreeNode-bar {
+  font-size: 12px; }
+
+.vTreeNode-bar {
+  color: #87919f;
+  text-align: left;
+  min-width: 0px;
+  padding-left: 15px;
+  line-height: 20px;
+  cursor: pointer;
+  height: 20px;
+  overflow: hidden; }
+
+.vTreeNode-folder .vTreeNode-title:hover {
+  border-bottom: 1px dashed #87919f; }
+
+.vTreeNode-folder:before {
+  content: ' ';
+  display: inline-block;
+  width: 0px;
+  height: 0px;
+  border: 5px solid #87919f;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent; }
+
+.vTreeNode-file {
+  overflow: visible; }
+  .vTreeNode-file .vTreeNode-title:hover {
+    border: 1px solid #e4e4e4;
+    background-color: #f6f6f6;
+    padding: 2px;
+    margin-left: -3px;
+    margin-top: -3px;
+    -webkit-box-shadow: 0 0 5px #87919f;
+    -moz-box-shadow: 0 0 5px #87919f;
+    -o-box-shadow: 0 0 5px #87919f;
+    -ms-box-shadow: 0 0 5px #87919f;
+    box-shadow: 0 0 5px #87919f; }
+
+.vTreeNode-folder.vTreeNode-open {
+  height: auto;
+  overflow: visible; }
+  .vTreeNode-folder.vTreeNode-open:before {
+    content: ' ';
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    border: 4px solid #dcdcdc;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    margin-right: 2px; }

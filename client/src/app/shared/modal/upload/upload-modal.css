@@ -1,0 +1,63 @@
+.upload-form .modal-dialog .modal-content .uploadZip:before, .upload-form .modal-dialog .modal-content textarea {
+  font-family: 'opensans-light-webfont'; }
+
+.upload-form .modal-dialog .modal-content .uploadZip:before {
+  font-family: 'opensans-semibold-webfont'; }
+
+.upload-form .modal-dialog .modal-content .uploadZip:before {
+  font-size: 14px; }
+
+.upload-form .modal-dialog .modal-content textarea {
+  font-size: 12px; }
+
+.upload-form .modal-dialog .modal-content .uploadZip:before {
+  font-size: 16px; }
+
+.upload-form .modal-dialog .modal-content .uploadZip:before {
+  background-color: #ff5a5f;
+  border: none;
+  height: 42px;
+  padding-left: 40px;
+  padding-right: 40px;
+  cursor: pointer; }
+
+.upload-form .modal-dialog .modal-content .uploadZip:hover:before {
+  -webkit-box-shadow: 0 0 4px #87919f;
+  -moz-box-shadow: 0 0 4px #87919f;
+  -o-box-shadow: 0 0 4px #87919f;
+  -ms-box-shadow: 0 0 4px #87919f;
+  box-shadow: 0 0 4px #87919f; }
+
+.upload-form .modal-dialog .modal-content .uploadZip:active:before {
+  box-shadow: none; }
+
+.upload-form .modal-dialog {
+  height: 100%;
+  width: 800px; }
+  .upload-form .modal-dialog .modal-content {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    margin-top: -208.5px;
+    position: relative;
+    left: 50%;
+    margin-left: -400px; }
+    .upload-form .modal-dialog .modal-content .create-button {
+      position: relative;
+      left: 50%;
+      margin-left: -60px; }
+    .upload-form .modal-dialog .modal-content .uploadZip {
+      visibility: hidden;
+      margin-bottom: 10px; }
+      .upload-form .modal-dialog .modal-content .uploadZip:before {
+        content: 'Choose File';
+        visibility: visible;
+        color: #fff;
+        background-color: #ff5a5f;
+        padding: 6px 12px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative; }
+    .upload-form .modal-dialog .modal-content textarea {
+      color: #323a45; }

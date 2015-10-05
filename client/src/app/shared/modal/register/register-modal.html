@@ -1,0 +1,24 @@
+<script type="text/ng-template" id="register.html">
+    <div class="close-button fa fa-times" ng-click="cancel()"></div>
+    <div class="modal-header">
+        <div class="modal-title">Sign Up</div>
+    </div>
+    <div class="modal-body">
+        <div class="alert alert-success" ng-if="registerSuccess">{{successMsg}}</div>
+        <form name="registerForm" id="register-form" class="form" role="form" ng-show="!registerSuccess">
+            <alert ng-if='createFailed' type="danger">{{errorMsg}}</alert>
+            <div class="form-group" ng-class="{'has-error': submitted && registerForm.username.$invalid}">
+                <input class="form-control register-input" id="register-username" name="username" placeholder="Guid" ng-model="newRegisterObj.username" required>
+            </div>
+            <div class="form-group" ng-class="{'has-error': submitted && registerForm.password.$invalid}">
+                <input class="form-control register-input" type="password" id="register-password" name="password" placeholder="Password" ng-model="newRegisterObj.password" required>
+            </div>
+            <button class="create-button submit-button" ng-click="register()">
+                <span ng-if="!showLoading">SIGN UP</span>
+                <div ng-if="showLoading">
+                    <div class="loader"></div>
+                </div>
+            </button>
+        </form>
+    </div>
+</script>

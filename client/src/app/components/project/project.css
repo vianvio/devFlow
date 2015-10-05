@@ -1,0 +1,105 @@
+.project-holder .project-mid-holder .project-file-info-holder .project-file-info {
+  font-family: 'opensans-light-webfont'; }
+
+.project-holder .top-bar .btn-setup {
+  font-family: 'opensans-semibold-webfont'; }
+
+.project-holder .project-mid-holder .project-team-info-holder .project-team-info {
+  font-family: 'opensans-regular-webfont'; }
+
+.project-holder .project-mid-holder .project-file-info-holder .project-file-info {
+  font-size: 14px; }
+
+.project-holder .top-bar .btn-setup {
+  font-size: 16px; }
+
+.project-holder .project-mid-holder .project-team-info-holder .project-team-info {
+  font-size: 10px; }
+
+.project-holder .top-bar .btn-setup {
+  background-color: #ff5a5f;
+  border: none;
+  height: 42px;
+  padding-left: 40px;
+  padding-right: 40px;
+  cursor: pointer; }
+
+.project-holder .top-bar .btn-setup:hover {
+  -webkit-box-shadow: 0 0 4px #87919f;
+  -moz-box-shadow: 0 0 4px #87919f;
+  -o-box-shadow: 0 0 4px #87919f;
+  -ms-box-shadow: 0 0 4px #87919f;
+  box-shadow: 0 0 4px #87919f; }
+
+.project-holder .top-bar .btn-setup:active {
+  box-shadow: none; }
+
+.project-holder .top-bar {
+  height: 46px;
+  background-color: #fff;
+  line-height: 46px;
+  width: 100%; }
+
+.project-holder .top-bar {
+  overflow: hidden;
+  line-height: normal; }
+  .project-holder .top-bar .btn-setup {
+    height: 36px;
+    margin: 5px 0px 5px 15px; }
+    .project-holder .top-bar .btn-setup[disabled] {
+      cursor: not-allowed;
+      box-shadow: none; }
+
+.project-holder .project-mid-holder {
+  text-align: center;
+  width: 100%;
+  height: calc(100% - 40px);
+  padding-bottom: 45px;
+  overflow-x: hidden;
+  overflow-y: auto; }
+  .project-holder .project-mid-holder .project-file-list-holder {
+    width: 300px;
+    overflow: auto;
+    -webkit-box-shadow: -5px 0px 10px #e4e4e4 inset;
+    -moz-box-shadow: -5px 0px 10px #e4e4e4 inset;
+    -o-box-shadow: -5px 0px 10px #e4e4e4 inset;
+    -ms-box-shadow: -5px 0px 10px #e4e4e4 inset;
+    box-shadow: -5px 0px 10px #e4e4e4 inset; }
+  .project-holder .project-mid-holder .project-file-middle {
+    width: calc(100% - 655px);
+    height: 100%; }
+  .project-holder .project-mid-holder .project-file-tab-holder {
+    height: 30px;
+    width: 100%; }
+  .project-holder .project-mid-holder .project-file-content-holder {
+    width: 100%;
+    height: calc(100% - 30px); }
+    .project-holder .project-mid-holder .project-file-content-holder .project-file-content-editor {
+      height: 100%;
+      text-align: left; }
+    .project-holder .project-mid-holder .project-file-content-holder .ace_print-margin {
+      display: none; }
+  .project-holder .project-mid-holder .project-file-info-holder {
+    width: 350px;
+    border-bottom: 1px solid #e4e4e4;
+    padding: 15px; }
+    .project-holder .project-mid-holder .project-file-info-holder .row {
+      margin: 5px 0 5px 0; }
+    .project-holder .project-mid-holder .project-file-info-holder .project-file-info {
+      color: #87919f;
+      text-align: left; }
+    .project-holder .project-mid-holder .project-file-info-holder .project-file-info-title {
+      text-align: right; }
+  .project-holder .project-mid-holder .project-team-info-holder {
+    width: 340px;
+    background-color: #323a45;
+    margin: 5px;
+    padding: 5px 5px 0 5px;
+    overflow: auto; }
+    .project-holder .project-mid-holder .project-team-info-holder .project-team-info {
+      color: #fff;
+      text-align: left; }
+  .project-holder .project-mid-holder .project-team-folder-mode {
+    height: calc(100% - 166px); }
+  .project-holder .project-mid-holder .project-team-file-mode {
+    height: calc(100% - 241px); }

@@ -1,0 +1,66 @@
+{
+  "name": "project",
+  "plural": "projects",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mongodb": {
+    "collection": "projects"
+  },
+  "mixins": {
+    "TimeStamp": true,
+    "AddUserInfo": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "projectFile": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "fileStructures": {
+      "type": "hasMany",
+      "model": "fileStructure",
+      "foreignKey": ""
+    },
+    "owner": {
+      "type": "belongsTo",
+      "model": "userModel",
+      "foreignKey": "ownerId"
+    },
+    "projectShares": {
+      "type": "hasMany",
+      "model": "projectShare",
+      "foreignKey": ""
+    },
+    "lastUpdatedBy": {
+      "type": "belongsTo",
+      "model": "userModel",
+      "foreignKey": "lastUpdatedBy"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

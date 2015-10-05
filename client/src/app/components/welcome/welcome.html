@@ -1,0 +1,40 @@
+<div class='welcome-holder full-height' ng-controller='welcomeCtrl'>
+    <div class='top-bar'>
+        <button class='btn btn-danger btn-setup' ng-click='createProject()'>Add Project</button>
+    </div>
+    <div class='welcome-mid-holder'>
+        <div class='project-holder col-xs-4' ng-repeat='project in arrProjects track by $index' ng-click='openProject(project.id, project.ownerId)'>
+            <div class='project-inner-holder'>
+                <div class='project-title-holder text-ellipsis'>
+                    Project Name : {{project.name}}
+                </div>
+                <div class='project-title-holder text-ellipsis'>
+                    Created On : {{project.createdAt | date : 'MM-dd-yyyy hh:mm:ss'}}
+                </div>
+                <div class='project-title-holder text-ellipsis'>
+                    Last Updated On : {{project.updatedAt | date : 'MM-dd-yyyy hh:mm:ss'}}
+                </div>
+                <div class='project-title-holder text-ellipsis'>
+                    Created By : {{project.owner.username}}
+                </div>
+            </div>
+        </div>
+        <div class='project-holder col-xs-4' ng-repeat='project in arrSharedProjects track by $index' ng-click='openProject(project.id, project.ownerId)'>
+            <div class='project-inner-holder'>
+                <div class='project-title-holder text-ellipsis'>
+                    Project Name : {{project.name}}
+                </div>
+                <div class='project-title-holder text-ellipsis'>
+                    Created On : {{project.createdAt | date : 'MM-dd-yyyy hh:mm:ss'}}
+                </div>
+                <div class='project-title-holder text-ellipsis'>
+                    Last Updated On : {{project.updatedAt | date : 'MM-dd-yyyy hh:mm:ss'}}
+                </div>
+                <div class='project-title-holder text-ellipsis'>
+                    Created By : {{project.owner.username}}
+                </div>
+                <div class='fa fa-share-alt project-share-icon' ng-if='!bShared'></div>
+            </div>
+        </div>
+    </div>
+</div>

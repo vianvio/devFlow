@@ -1,0 +1,59 @@
+<div class='project-holder full-height' ng-controller='projectCtrl'>
+    <div class='top-bar'>
+        <button class='btn btn-danger btn-setup' ng-click='uploadProject()' ng-disabled='!bOwnerOfProject'>Upload Project File</button>
+        <button class='btn btn-danger btn-setup' ng-click='shareProject()' ng-disabled='!bOwnerOfProject'>Share Project</button>
+    </div>
+    <div class='project-mid-holder'>
+        <div class='project-file-list-holder full-height pull-left'>
+            <vtreenode nodes='arrFileStructure'></vtreenode>
+        </div>
+        <div class='project-file-middle pull-left'>
+            <div class='project-file-tab-holder'></div>
+            <div class='project-file-content-holder'>
+                <div class='project-file-content-editor' ui-ace='editorMode' ng-model='fileInfo.fileContent' ng-readonly='getAceReadonlyStatus(fileInfo)'></div>
+            </div>
+        </div>
+        <div class='project-file-info-holder pull-right' ng-if='bFile'>
+            <div class='row'>
+                <div class='col-xs-5 project-file-info project-file-info-title'>File Name: </div>
+                <div class='col-xs-7 project-file-info project-file-info-content text-ellipsis'>{{fileInfo.name}}</div>
+            </div>
+            <div class='row'>
+                <div class='col-xs-5 project-file-info project-file-info-title'>Owner: </div>
+                <div class='col-xs-7 project-file-info project-file-info-content text-ellipsis'>{{fileInfo.owner.username}}</div>
+            </div>
+            <div class='row'>
+                <div class='col-xs-5 project-file-info project-file-info-title'>Create Date: </div>
+                <div class='col-xs-7 project-file-info project-file-info-content text-ellipsis'>{{fileInfo.createdAt | date:'MM-dd-yyyy hh:mm'}}</div>
+            </div>
+            <div class='row'>
+                <div class='col-xs-5 project-file-info project-file-info-title'>Updated By: </div>
+                <div class='col-xs-7 project-file-info project-file-info-content text-ellipsis'>{{fileInfo.lastUpdatedBy.username}}</div>
+            </div>
+            <div class='row'>
+                <div class='col-xs-5 project-file-info project-file-info-title'>Updated Date: </div>
+                <div class='col-xs-7 project-file-info project-file-info-content text-ellipsis'>{{fileInfo.updatedAt | date:'MM-dd-yyyy hh:mm'}}</div>
+            </div>
+            <hr/>
+            <button class='btn btn-primary' ng-if='fileInfo.isLocked' ng-disabled='getUnlockBtnStatus(fileInfo)' ng-click='unlockFile(fileInfo)'>Unlock</button>
+            <button class='btn btn-danger' ng-if='!fileInfo.isLocked' ng-click='lockFile(fileInfo)'>Lock</button>
+            <button class='btn btn-success' ng-click='saveFile(fileInfo)'>Save</button>
+        </div>
+        <div class='project-file-info-holder pull-right' ng-if='!bFile'>
+            <div class='row'>
+                <div class='col-xs-5 project-file-info project-file-info-title'>Folder Name: </div>
+                <div class='col-xs-7 project-file-info project-file-info-content text-ellipsis'>{{folderInfo.name}}</div>
+            </div>
+            <div class='row'>
+                <div class='col-xs-5 project-file-info project-file-info-title'>Create Date: </div>
+                <div class='col-xs-7 project-file-info project-file-info-content text-ellipsis'>{{folderInfo.createdAt | date:'MM-dd-yyyy hh:mm'}}</div>
+            </div>
+            <hr/>
+            <button class='btn btn-success' ng-click='bowerInstall()' ng-disabled='!bOwnerOfProject'>Bower Install</button>
+            <button class='btn btn-primary' ng-click='npmInstall()' ng-disabled='!bOwnerOfProject'>Npm Install</button>
+        </div>
+        <div class='project-team-info-holder pull-right' ng-class='bFile ? "project-team-file-mode" : "project-team-folder-mode"'>
+            <div class='project-team-info'>Team Infomation : </div>
+        </div>
+    </div>
+</div>
