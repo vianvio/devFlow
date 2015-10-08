@@ -1,0 +1,44 @@
+<script type="text/ng-template" id="chat.html">
+    <div class="close-button fa fa-times" ng-click="cancel()"></div>
+    <div class="modal-header">
+        <div class="modal-title">Chat</div>
+    </div>
+    <div class="modal-body">
+        <div class='room-list-holder full-height pull-left'>
+            <div class='room-list-title position-relative'>
+                Room List
+                <i class='fa fa-plus-circle room-plus-btn' ng-click='addChatRoom()'></i>
+            </div>
+            <div class='room-list-inner-holder'>
+                <div class='room-holder' ng-repeat='room in arrRooms track by $index' ng-class='room.id === currentRoomId ? "room-current" : ""' ng-click='setCurrentRoom(room.id)'>
+                    {{room.name}}
+                </div>
+                <div class='room-holder' ng-repeat='room in arrSharedRooms track by $index' ng-class='room.id === currentRoomId ? "room-current" : ""' ng-click='setCurrentRoom(room.id)'>
+                    {{room.name}}
+                </div>
+            </div>
+        </div>
+        <div class='chat-content-holder full-height pull-left'>
+            <div class='chat-content-inner-holder full-height position-relative' id='{{room.id}}' ng-show='room.id === currentRoomId' ng-repeat='room in arrRooms track by $index'>
+                <div class='chat-content-list'>
+                </div>
+                <div class='chat-input-holder'>
+                    <div class="input-group">
+                        <span class="input-group-addon chat-add-btn" id="basic-addon1" ng-click='addChatMember()'><i class='fa fa-plus'></i></span>
+                        <input type="text" class="form-control" placeholder="Input Something ..." aria-describedby="basic-addon1" ng-keydown='sendMessage($event)'>
+                    </div>
+                </div>
+            </div>
+            <div class='chat-content-inner-holder full-height position-relative' id='{{room.id}}' ng-show='room.id === currentRoomId' ng-repeat='room in arrSharedRooms track by $index'>
+                <div class='chat-content-list'>
+                </div>
+                <div class='chat-input-holder'>
+                    <div class="input-group">
+                        <span class="input-group-addon chat-add-btn" id="basic-addon1" ng-click='addChatMember()'><i class='fa fa-plus'></i></span>
+                        <input type="text" class="form-control" placeholder="Input Something ..." aria-describedby="basic-addon1" ng-keydown='sendMessage($event)'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

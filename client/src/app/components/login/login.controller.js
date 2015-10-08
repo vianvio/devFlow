@@ -21,11 +21,7 @@ angular.module('devCooperation')
             $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
             $scope.setCurrentUser(user);
             $scope.showLoading = true;
-            // if (user.clientVoList > 0) {
-            //   $state.go('clients');
-            // } else {
-              $state.go('welcome');
-            // }
+            $state.go('welcome');
           }, function(e) {
             $scope.loginFailed = true;
             $scope.showLoading = false;

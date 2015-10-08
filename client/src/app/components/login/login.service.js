@@ -5,9 +5,20 @@ angular.module('devCooperation')
     authService.login = function(credentials) {
       var deferred = $q.defer();
       $http.post(apiRoute + '/userModels/login', credentials).then(function(res) {
-        Session.create(res.data.id, res.data.userId);
+        Session.create(res.data.id, res.data.userId, res.data.username);
         $http.defaults.headers.common.Authorization = res.data.id;
-        socketService.reconnect();
+
+        socketService.connect();
+        /* namespace version 
+        // after login, connect the main socket
+        socketService.connect('main', function(_socket) {
+          _socket.on('child socket created', function(strChildInfo) {
+            var objChildInfo = JSON.parse(strChildInfo);
+            console.log(objChildInfo);
+            socketService.connect(objChildInfo.childNamespace, function(_socket) {}, objChildInfo.eventName, objChildInfo.eventMethodName);
+          });
+        });
+        */
         deferred.resolve(res.data);
       }, deferred.reject);
 

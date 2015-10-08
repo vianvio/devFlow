@@ -53,5 +53,13 @@
   "container": {
     "dataSource": "projectFile",
     "public": true
+  },
+  "chatRoom": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "userChatRoom": {
+    "dataSource": "mongoDB",
+    "public": true
   }
 }

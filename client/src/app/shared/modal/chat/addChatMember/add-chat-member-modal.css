@@ -1,0 +1,64 @@
+.add-chat-member-form .modal-dialog .modal-content .search-result-holder .search-result .search-result-date {
+  font-family: 'opensans-light-webfont'; }
+
+.add-chat-member-form .modal-dialog .modal-content .search-result-holder .search-result .search-result-name {
+  font-family: 'opensans-regular-webfont'; }
+
+.add-chat-member-form .modal-dialog .modal-content .search-result-holder .search-result .search-result-date {
+  font-size: 10px; }
+
+.add-chat-member-form .modal-dialog .modal-content .search-result-holder .search-result .search-result-name {
+  font-size: 18px; }
+
+.add-chat-member-form .modal-dialog {
+  height: 100%; }
+  .add-chat-member-form .modal-dialog .modal-content {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    margin-top: -229.5px;
+    position: relative;
+    left: 50%;
+    margin-left: -300px; }
+    .add-chat-member-form .modal-dialog .modal-content .create-button {
+      position: relative;
+      left: 50%;
+      margin-left: -60px; }
+    .add-chat-member-form .modal-dialog .modal-content .user-search-holder {
+      padding-bottom: 14px;
+      border-bottom: 1px solid #e4e4e4;
+      width: 100%; }
+      .add-chat-member-form .modal-dialog .modal-content .user-search-holder .user-search {
+        display: inline-block;
+        width: 80%; }
+      .add-chat-member-form .modal-dialog .modal-content .user-search-holder .user-search-btn {
+        display: inline-block;
+        width: calc(20% - 14px);
+        margin-left: 10px; }
+    .add-chat-member-form .modal-dialog .modal-content .search-result-holder {
+      width: 100%;
+      position: absolute;
+      top: 36px;
+      border: 1px solid #e4e4e4;
+      background-color: #fff;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      -o-border-radius: 4px;
+      -ms-border-radius: 4px;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 0 5px #dcdcdc;
+      -moz-box-shadow: 0 0 5px #dcdcdc;
+      -o-box-shadow: 0 0 5px #dcdcdc;
+      -ms-box-shadow: 0 0 5px #dcdcdc;
+      box-shadow: 0 0 5px #dcdcdc; }
+      .add-chat-member-form .modal-dialog .modal-content .search-result-holder .search-result {
+        width: 100%;
+        height: 40px;
+        padding: 0 10px 0 10px;
+        color: #87919f;
+        cursor: pointer; }
+        .add-chat-member-form .modal-dialog .modal-content .search-result-holder .search-result:hover {
+          background-color: #f6f6f6; }
+    .add-chat-member-form .modal-dialog .modal-content .user-table {
+      max-height: 200px;
+      overflow: auto; }

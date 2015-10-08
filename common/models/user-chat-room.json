@@ -1,6 +1,6 @@
 {
-  "name": "projectShare",
-  "plural": "projectShares",
+  "name": "userChatRoom",
+  "plural": "userChatRooms",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -13,30 +13,25 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "project": {
-      "type": "belongsTo",
-      "model": "project",
-      "foreignKey": "projectId"
-    },
     "owner": {
       "type": "belongsTo",
       "model": "userModel",
       "foreignKey": "ownerId"
     },
-    "lastUpdatedBy": {
-      "type": "belongsTo",
-      "model": "userModel",
-      "foreignKey": "lastUpdatedBy"
-    },
-    "sharedUser": {
-      "type": "belongsTo",
-      "model": "userModel",
-      "foreignKey": "sharedUserId"
-    },
     "chatRoom": {
       "type": "belongsTo",
       "model": "chatRoom",
-      "foreignKey": ""
+      "foreignKey": "chatRoomId"
+    },
+    "lastUpdatedBy": {
+      "type": "belongsTo",
+      "model": "userModel",
+      "foreignKey": "lastUpdatedById"
+    },
+    "member": {
+      "type": "belongsTo",
+      "model": "userModel",
+      "foreignKey": "memberId"
     }
   },
   "acls": [

@@ -1,10 +1,11 @@
 angular.module('devCooperation')
   .service('Session', ['localStorageService', '$base64', '$http', function(localStorageService, $base64, $http) {
     var Session = {};
-    Session.create = function(tokenId, userId) {
+    Session.create = function(tokenId, userId, username) {
       localStorageService.set('current-user', {
         "tokenId": tokenId,
-        "userId": userId
+        "userId": userId,
+        "username": username
       });
     };
 

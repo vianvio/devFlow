@@ -65,7 +65,8 @@ run(['$rootScope', '$location', 'localStorageService', '$http', '$templateCache'
       if ($location.path() === '/logout') {
         $rootScope.currentUser = null;
         localStorageService.remove('current-user');
-        socketService.disconnect();
+        socketService.getSocket().disconnect();
+        // socketService.disconnectAll(); // namespace version
         $location.path('/login');
       }
     });

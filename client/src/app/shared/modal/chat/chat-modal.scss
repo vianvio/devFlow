@@ -1,0 +1,106 @@
+@import '../../../mixin';
+.chat-form {
+    .modal-dialog {
+        height: 100%;
+        width: 800px;
+        .modal-content {
+            width: 100%;
+            @include screen-center(800px, 500px, 0, 50px);
+            .modal-header {
+                &:before {
+                    display: none;
+                }
+                &:after {
+                    display: none;
+                }
+            }
+            .modal-body {
+                padding: 0;
+                height: 450px;
+                .room-list-holder {
+                    width: 150px;
+                    background-color: $ida-f6f;
+                    border-bottom-left-radius: 6px;
+                    .room-list-title {
+                        height: 40px;
+                        overflow: hidden;
+                        line-height: 40px;
+                        padding: 0 5px 0 15px;
+                        @extend %font-14-regular;
+                        color: $ida-879;
+                        border-bottom: 1px solid $ida-fff;
+                        .room-plus-btn {
+                            position: absolute;
+                            right: 10px;
+                            top: 11px;
+                            font-size: 20px;
+                            color: $ida-0e9;
+                            cursor: pointer;
+                        }
+                    }
+                    .room-list-inner-holder {
+                        height: 405px;
+                        @extend %font-12-light;
+                        color: $ida-879;
+                        .room-holder {
+                            width: 100%;
+                            height: 40px;
+                            line-height: 40px;
+                            padding-left: 15px;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: $ida-e4e;
+                            }
+                        }
+                        .room-current {
+                            background-color: $ida-fff;
+                        }
+                    }
+                }
+                .chat-content-holder {
+                    width: calc(100% - 150px);
+                    border-bottom-right-radius: 6px;
+                    .chat-content-inner-holder {
+                        width: 100%;
+                        .chat-content-list {
+                            width: 100%;
+                            height: calc(100% - 50px);
+                            overflow: auto;
+                            .chat-content-line {
+                                width: 100%;
+                                .chat-content {
+                                    padding: 10px;
+                                    margin: 10px 0 0 15px;
+                                    max-width: calc(100% - 30px);
+                                    @include border-radius(4px);
+                                    border: 1px solid $ida-e4e;
+                                    @include box-shadow(0 0 5px $ida-dcd);
+                                    .chat-content-user {
+                                        @extend %font-12-semibold;
+                                    }
+                                    .chat-content-text {
+                                        margin-top: 5px;
+                                        @extend %font-10-regular;
+                                        color: $ida-879;
+                                        word-break: break-all;
+                                    }
+                                }
+                            }
+                        }
+                        .chat-input-holder {
+                            position: absolute;
+                            width: calc(100% - 30px);
+                            bottom: 10px;
+                            left: 15px;
+                            .chat-add-btn {
+                                color: $ida-879;
+                                cursor: pointer;
+                                @extend %click-effect;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

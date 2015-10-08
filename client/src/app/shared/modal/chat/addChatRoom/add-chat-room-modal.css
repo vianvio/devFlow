@@ -1,0 +1,17 @@
+.add-chat-room-form .modal-dialog {
+  height: 100%;
+  width: 430px; }
+  .add-chat-room-form .modal-dialog .modal-content {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    margin-top: -142px;
+    position: relative;
+    left: 50%;
+    margin-left: -215px; }
+    .add-chat-room-form .modal-dialog .modal-content .new-room-input {
+      display: inline-block;
+      width: 80%; }
+    .add-chat-room-form .modal-dialog .modal-content .btn-add-room {
+      width: calc(20% - 14px);
+      margin-left: 10px; }

@@ -1,0 +1,56 @@
+@import '../../../../mixin';
+.add-chat-member-form {
+    .modal-dialog {
+        height: 100%;
+        .modal-content {
+            width: 100%;
+            @include screen-center(600px, 459px, 0, 0);
+            .create-button {
+                @include horizontal-center(120px, 0);
+            }
+            .user-search-holder {
+                padding-bottom: 14px;
+                border-bottom: 1px solid $ida-e4e;
+                width: 100%;
+                .user-search {
+                    display: inline-block;
+                    width: 80%;
+                }
+                .user-search-btn {
+                    display: inline-block;
+                    width: calc(20% - 14px);
+                    margin-left: 10px;
+                }
+            }
+            .search-result-holder {
+                width: 100%;
+                position: absolute;
+                top: 36px;
+                border: 1px solid $ida-e4e;
+                background-color: $ida-fff;
+                @include border-radius(4px);
+                @include box-shadow(0 0 5px $ida-dcd);
+                .search-result {
+                    width: 100%;
+                    height: 40px;
+                    padding: 0 10px 0 10px;
+                    color: $ida-879;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $ida-f6f;
+                    }
+                    .search-result-name {
+                        @extend %font-18-regular;
+                    }
+                    .search-result-date {
+                        @extend %font-10-light;
+                    }
+                }
+            }
+            .user-table {
+                max-height: 200px;
+                overflow: auto;
+            }
+        }
+    }
+}

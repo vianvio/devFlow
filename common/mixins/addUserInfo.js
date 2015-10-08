@@ -1,8 +1,10 @@
+var debug = require('debug')('devflow:addUserInfo.js');
+
 module.exports = function(Model, options) {
   // observe for save in logic.
   Model.observe('before save', function(ctx, next) {
     // check user id. Since api call will also fire these, take user id as a flag
-    console.log('from before save');
+    debug('from before save. userid: %s \n ctx.instance: %s \n ctx.data: %s', ctx.options.userId, ctx.instance, ctx.data);
     if (ctx.options.userId) {
       if (!ctx.isNewInstance) {
         // update
@@ -17,7 +19,7 @@ module.exports = function(Model, options) {
           ctx.instance.ownerId = ctx.options.userId;
           ctx.instance.lastUpdatedBy = ctx.options.userId;
         } else {
-          ctx.instance.ownerId = ctx.options.userId;
+          ctx.data.ownerId = ctx.options.userId;
           ctx.data.lastUpdatedBy = ctx.options.userId;
         }
       }
@@ -27,10 +29,12 @@ module.exports = function(Model, options) {
 
   // remote hook for rest api.
   Model.beforeRemote('create', function(ctx, obj, next) {
+    debug('from before create. ctx.options: %s \n ctx.options.skipUserInfo: %s \n ctx.args.data: %s \n ctx.req.accessToken: %s',
+      ctx.options, ctx.options.skipUserInfo, JSON.stringify(ctx.args.data), JSON.stringify(ctx.req.accessToken));
     if ((!ctx.options) || (ctx.options && ctx.options.skipUserInfo)) {
       return next();
     }
-    // console.log('before create: ' + ctx.args.data + ', ' + ctx.req.accessToken + ', ' + ctx.req.accessToken.userId);
+    // debug('before create: ' + ctx.args.data + ', ' + ctx.req.accessToken + ', ' + ctx.req.accessToken.userId);
     if (ctx.args.data && ctx.req.accessToken && ctx.req.accessToken.userId) {
       ctx.args.data.ownerId = ctx.req.accessToken.userId;
       ctx.args.data.lastUpdatedBy = ctx.req.accessToken.userId;
@@ -39,7 +43,7 @@ module.exports = function(Model, options) {
   });
 
   Model.beforeRemote('upsert', function(ctx, obj, next) {
-    console.log('from upsert');
+    debug('from upsert');
     if ((!ctx.options) || (ctx.options && ctx.options.skipUserInfo)) {
       return next();
     }
@@ -50,7 +54,7 @@ module.exports = function(Model, options) {
   });
 
   Model.beforeRemote('updateAll', function(ctx, obj, next) {
-    console.log('from updateall');
+    debug('from updateall');
     // need confirm: data is array?
     if ((!ctx.options) || (ctx.options && ctx.options.skipUserInfo)) {
       return next();

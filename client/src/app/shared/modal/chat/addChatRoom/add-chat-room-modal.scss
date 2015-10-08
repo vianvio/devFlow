@@ -1,0 +1,19 @@
+@import '../../../../mixin';
+.add-chat-room-form {
+    .modal-dialog {
+        height: 100%;
+        width: 430px;
+        .modal-content {
+            width: 100%;
+            @include screen-center(430px, 134px, 0, 150px);
+            .new-room-input {
+                display: inline-block;
+                width: 80%;
+            }
+            .btn-add-room {
+                width: calc(20% - 14px);
+                margin-left: 10px;
+            }
+        }
+    }
+}

@@ -19,6 +19,14 @@ module.exports = function(UserModel) {
     next();
   });
 
+  UserModel.afterRemote('login', function(ctx, userModel, next) {
+    UserModel.findById(userModel.userId, function(err, user) {
+      if (err) next(err);
+      ctx.result.username = user.username;
+      next();
+    });
+  });
+
   // UserModel.login = function(cridential, cb) {
   //   cridential.ttl = 60;
   //   User.login(cridential, function(err, accessToken) {

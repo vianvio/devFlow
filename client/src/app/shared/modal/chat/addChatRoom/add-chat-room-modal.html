@@ -1,0 +1,21 @@
+<script type="text/ng-template" id="add-chat-room.html">
+    <div class="close-button fa fa-times" ng-click="cancel()"></div>
+    <div class="modal-header">
+        <div class="modal-title">Add Chat Room</div>
+    </div>
+    <div class="modal-body">
+        <div class="alert alert-success" ng-if="createSuccess">{{successMsg}}</div>
+        <form name="addChatRoomForm" id="register-form" class="form" role="form" ng-show="!createSuccess">
+            <alert ng-if='createFailed' type="danger">{{errorMsg}}</alert>
+            <div class="form-group" ng-class="{'has-error': submitted && addChatRoomForm.name.$invalid}">
+                <input class="form-control new-room-input" name="name" autocomplete='off' placeholder="Room Name" ng-model="newChatRoomObj.name" required>
+                <button class="btn btn-success btn-add-room" ng-click="addRoom()">
+                    <span ng-if="!showLoading">ADD</span>
+                    <div ng-if="showLoading">
+                        <div class="loader"></div>
+                    </div>
+                </button>
+            </div>
+        </form>
+    </div>
+</script>
