@@ -3,7 +3,8 @@ angular.module('devCooperation')
     var apiRoute = api.isDev ? api.devRoute : api.proRoute;
     var socketService = {};
     //Creating connection with server
-    var _socket = io.connect('http://172.31.61.55:3000');
+    // var _socket = io.connect('http://172.31.61.55:3000');
+    var _socket = io.connect('http://localhost:3000');
     var _eventMethods = {};
 
     socketService.connect = function() {
@@ -13,7 +14,8 @@ angular.module('devCooperation')
         var id = userInfo.tokenId;
         var userId = userInfo.userId;
         _socket = {};
-        _socket = io.connect('http://172.31.61.55:3000', {
+        // _socket = io.connect('http://172.31.61.55:3000', {
+        _socket = io.connect('http://localhost:3000', {
           'force new connection': true
         });
         _socket.on('connect', function() {
