@@ -1,0 +1,50 @@
+@import '../../mixin';
+.welcome-holder {
+    .top-bar {
+        @extend %top-bar;
+        overflow: hidden;
+        .btn-setup {
+            @extend %btn-common;
+            height: 36px;
+            display: block;
+            margin: 5px 15px;
+        }
+    }
+    .welcome-mid-holder {
+        height: calc(100% - #{$foot-height} - #{$top-bar-height});
+        padding-bottom: $foot-height + 5; // for foot bar
+        width: 100%;
+        overflow-x: visible;
+        overflow-y: auto;
+        padding-top: 20px;
+        .welcome-mid-inner-holder {
+            width: 1024px;
+            margin: 0 auto;
+            .project-holder {
+                text-align: left;
+                height: 250px;
+                padding: 10px;
+                .project-inner-holder {
+                    width: 100%;
+                    height: 100%;
+                    border: 1px solid $ida-e4e;
+                    background-color: $ida-fff;
+                    @include border-radius(4px);
+                    @extend %click-effect;
+                    cursor: pointer;
+                    padding: 15px;
+                    .project-title-holder {
+                        height: 40px;
+                        width: 100%;
+                        @extend %font-16-regular;
+                        color: $ida-879;
+                    }
+                    .project-share-icon {
+                        font-size: 25px;
+                        color: $ida-879;
+                    }
+                }
+            }
+        }
+    }
+}
