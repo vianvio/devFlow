@@ -8,8 +8,8 @@ angular.module('devCooperation')
         templateUrl: 'app/components/login/login.html',
         controller: "LoginController"
       })
-      .state('project', {
-        url: '/project/:projectId',
+      .state('projectCodeBase', {
+        url: '/projectCodeBase/:projectId',
         templateUrl: 'app/components/project/project.html'
       })
       .state('clients', {
@@ -31,6 +31,10 @@ angular.module('devCooperation')
       .state('welcome', {
         url: '/welcome',
         templateUrl: 'app/components/welcome/welcome.html'
+      })
+      .state('projectApiConfig', {
+        url: '/projectApiConfig/:projectId',
+        templateUrl: 'app/components/apiConfig/apiConfig.html'
       })
       .state('main', {
         url: '/main',

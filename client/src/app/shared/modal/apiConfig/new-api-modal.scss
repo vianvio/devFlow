@@ -1,0 +1,36 @@
+@import '../../../mixin';
+.new-api-form {
+    .modal-dialog {
+        height: 100%;
+        width: 600px;
+        .modal-content {
+            width: 100%;
+            @include screen-center(600px, 400px, 0, 100px);
+            .create-button {
+                @include horizontal-center(200px, 0);
+                margin-top: 10px;
+                width: 200px;
+            }
+            .new-api-input {
+                @extend %font-16-light;
+                height: 40px;
+                margin: 0 auto;
+            }
+            .btn-group {
+                float: left;
+                margin-right: 10px;
+            }
+            .btn-group .btn {
+                width: 95px;
+                height: 39px;
+            }
+            .dropdown-text {
+                width: 80%;
+                display: inline-block;
+            }
+            .caret {
+                margin-left: 10px;
+            }
+        }
+    }
+}

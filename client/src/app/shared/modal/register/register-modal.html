@@ -8,7 +8,7 @@
         <form name="registerForm" id="register-form" class="form" role="form" ng-show="!registerSuccess">
             <alert ng-if='createFailed' type="danger">{{errorMsg}}</alert>
             <div class="form-group" ng-class="{'has-error': submitted && registerForm.username.$invalid}">
-                <input class="form-control register-input" id="register-username" name="username" placeholder="Guid" ng-model="newRegisterObj.username" required>
+                <input class="form-control register-input" id="register-username" name="username" autocomplete='off' placeholder="Guid" ng-model="newRegisterObj.username" required>
             </div>
             <div class="form-group" ng-class="{'has-error': submitted && registerForm.password.$invalid}">
                 <input class="form-control register-input" type="password" id="register-password" name="password" placeholder="Password" ng-model="newRegisterObj.password" required>

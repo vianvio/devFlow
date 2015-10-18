@@ -1,13 +1,10 @@
 {
-  "name": "project",
-  "plural": "projects",
+  "name": "apiConfig",
+  "plural": "apiConfigs",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
-  },
-  "mongodb": {
-    "collection": "projects"
   },
   "mixins": {
     "TimeStamp": true,
@@ -18,34 +15,57 @@
       "type": "string",
       "required": true
     },
-    "description": {
+    "serviceName": {
+      "type": "string",
+      "required": true
+    },
+    "methodName": {
+      "type": "string",
+      "required": true
+    },
+    "route": {
+      "type": "string",
+      "required": true
+    },
+    "isDisabled": {
+      "type": "boolean"
+    },
+    "urlWithParams": {
       "type": "string"
     },
-    "projectFile": {
+    "succeededResRoute": {
+      "type": "string"
+    },
+    "failedResRoute": {
       "type": "string"
     }
   },
   "validations": [],
   "relations": {
-    "fileStructures": {
-      "type": "hasMany",
-      "model": "fileStructure",
-      "foreignKey": ""
-    },
     "owner": {
       "type": "belongsTo",
       "model": "userModel",
       "foreignKey": "ownerId"
     },
-    "projectShares": {
-      "type": "hasMany",
-      "model": "projectShare",
-      "foreignKey": ""
-    },
     "lastUpdatedBy": {
       "type": "belongsTo",
       "model": "userModel",
       "foreignKey": "lastUpdatedById"
+    },
+    "apiMethod": {
+      "type": "belongsTo",
+      "model": "apiMethod",
+      "foreignKey": "apiMethodId"
+    },
+    "project": {
+      "type": "belongsTo",
+      "model": "project",
+      "foreignKey": "projectId"
+    },
+    "apiFieldInfos": {
+      "type": "hasMany",
+      "model": "apiFieldInfo",
+      "foreignKey": "apiConfigId"
     }
   },
   "acls": [

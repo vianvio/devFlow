@@ -61,5 +61,21 @@
   "userChatRoom": {
     "dataSource": "mongoDB",
     "public": true
+  },
+  "apiConfig": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "apiMethod": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "jsonSample": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "apiFieldInfo": {
+    "dataSource": "mongoDB",
+    "public": true
   }
 }

@@ -1,4 +1,15 @@
 <div class='project-holder full-height' ng-controller='projectCtrl'>
+    <div class='top-bar project-title-bar position-relative'>
+        <div>Project Name : {{projectName}}</div>
+        <div class='project-tab-holder'>
+            <div class='project-tab position-relative' ng-click='pageTo("projectApiConfig")'>
+                API Config
+            </div>
+            <div class='project-tab position-relative project-tab-current'>
+                Code Base
+            </div>
+        </div>
+    </div>
     <div class='top-bar'>
         <button class='btn btn-danger btn-setup' ng-click='uploadProject()' ng-disabled='!bOwnerOfProject'>Upload Project File</button>
         <button class='btn btn-danger btn-setup' ng-click='shareProject()' ng-disabled='!bOwnerOfProject'>Share Project</button>

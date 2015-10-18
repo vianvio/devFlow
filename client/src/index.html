@@ -26,9 +26,6 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif] -->
     <div ui-view class='ui-view-holder overflow-hidden'></div>
-    <div class="loading-modal" ng-show="$root.showLoading">
-        <div class="global-loader"></div>
-    </div>
     <div ng-include="'app/shared/footBar/footBar.html'" include-replace></div>
     <!-- bind modals -->
     <div ng-include="'app/shared/modal/upload/upload-modal.html'" include-replace></div>
@@ -40,6 +37,7 @@
     <div ng-include="'app/shared/modal/chat/chat-modal.html'" include-replace></div>
     <div ng-include="'app/shared/modal/chat/addChatRoom/add-chat-room-modal.html'" include-replace></div>
     <div ng-include="'app/shared/modal/chat/addChatMember/add-chat-member-modal.html'" include-replace></div>
+    <div ng-include="'app/shared/modal/apiConfig/new-api-modal.html'" include-replace></div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
     (function(b, o, i, l, e, r) {

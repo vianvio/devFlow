@@ -5,6 +5,7 @@ angular.module('devCooperation').controller('projectCtrl', ['$scope', '$rootScop
     var _fileNodes = {};
 
     function initialize() {
+      $scope.projectName = localStorageService.get('currentProjectInfo').projectName;
       $scope.arrFileStructure = [];
       _fileNodes = {};
       // check current user & project's owner
@@ -46,6 +47,12 @@ angular.module('devCooperation').controller('projectCtrl', ['$scope', '$rootScop
         });
       }
       return _result;
+    };
+
+    $scope.pageTo = function(routeName) {
+      $state.go(routeName, {
+        projectId: localStorageService.get('currentProjectInfo').projectId
+      });
     };
 
     $scope.getAceReadonlyStatus = function(fileInfo) {

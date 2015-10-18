@@ -33,15 +33,16 @@ angular.module('devCooperation').controller('welcomeCtrl', ['$scope', '$rootScop
       });
     };
 
-    $scope.openProject = function(projectId, ownerId) {
+    $scope.openProject = function(project) {
       // cache current project's ownerId
       localStorageService.remove('currentProjectInfo');
       localStorageService.set('currentProjectInfo', {
-        projectId: projectId,
-        ownerId: ownerId
+        projectId: project.id,
+        ownerId: project.ownerId,
+        projectName: project.name
       })
-      $state.go('project', {
-        projectId: projectId
+      $state.go('projectApiConfig', {
+        projectId: project.id
       });
     };
 

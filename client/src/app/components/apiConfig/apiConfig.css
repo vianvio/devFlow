@@ -1,0 +1,253 @@
+.apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .api-url-example, .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder label {
+  font-family: 'opensans-light-webfont'; }
+
+.apiConfig-holder .project-title-bar .project-tab-holder .project-tab, .apiConfig-holder .top-bar .btn-setup, .apiConfig-holder .project-title-bar {
+  font-family: 'opensans-semibold-webfont'; }
+
+.apiConfig-holder .apiConfig-mid-holder .api-holder .api-location-text, .apiConfig-holder .apiConfig-mid-holder .api-holder .api-date-text, .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder, .apiConfig-holder .apiConfig-mid-holder .api-holder .api-method-text, .apiConfig-holder .apiConfig-mid-holder .api-holder .api-url-text {
+  font-family: 'opensans-regular-webfont'; }
+
+.apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .api-url-example {
+  font-size: 12px; }
+
+.apiConfig-holder .project-title-bar .project-tab-holder .project-tab {
+  font-size: 14px; }
+
+.apiConfig-holder .top-bar .btn-setup {
+  font-size: 16px; }
+
+.apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder label {
+  font-size: 18px; }
+
+.apiConfig-holder .project-title-bar {
+  font-size: 20px; }
+
+.apiConfig-holder .apiConfig-mid-holder .api-holder .api-location-text, .apiConfig-holder .apiConfig-mid-holder .api-holder .api-date-text, .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder {
+  font-size: 14px; }
+
+.apiConfig-holder .apiConfig-mid-holder .api-holder .api-method-text {
+  font-size: 16px; }
+
+.apiConfig-holder .apiConfig-mid-holder .api-holder .api-url-text {
+  font-size: 24px; }
+
+.apiConfig-holder .top-bar .btn-setup {
+  background-color: #ff5a5f;
+  border: none;
+  height: 42px;
+  padding-left: 40px;
+  padding-right: 40px;
+  cursor: pointer; }
+
+.apiConfig-holder .top-bar .btn-setup:hover, .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .expected-result-col-holder .btn-field-remove:hover {
+  -webkit-box-shadow: 0 0 4px #87919f;
+  -moz-box-shadow: 0 0 4px #87919f;
+  -o-box-shadow: 0 0 4px #87919f;
+  -ms-box-shadow: 0 0 4px #87919f;
+  box-shadow: 0 0 4px #87919f; }
+
+.apiConfig-holder .top-bar .btn-setup:active, .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .expected-result-col-holder .btn-field-remove:active {
+  box-shadow: none; }
+
+.apiConfig-holder .top-bar {
+  height: 46px;
+  background-color: #fff;
+  line-height: 46px;
+  width: 100%; }
+
+.apiConfig-holder .project-title-bar {
+  border-bottom: 1px solid #e4e4e4;
+  -webkit-box-shadow: 0 0 4px #dcdcdc;
+  -moz-box-shadow: 0 0 4px #dcdcdc;
+  -o-box-shadow: 0 0 4px #dcdcdc;
+  -ms-box-shadow: 0 0 4px #dcdcdc;
+  box-shadow: 0 0 4px #dcdcdc;
+  color: #87919f;
+  padding-left: 15px; }
+  .apiConfig-holder .project-title-bar .project-tab-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center; }
+    .apiConfig-holder .project-title-bar .project-tab-holder .project-tab {
+      display: inline-block;
+      cursor: pointer;
+      margin: 0 30px 0 30px; }
+    .apiConfig-holder .project-title-bar .project-tab-holder .project-tab-current:after {
+      content: ' ';
+      position: absolute;
+      width: calc(100% + 20px);
+      left: -10px;
+      bottom: 3px;
+      height: 2px;
+      background-color: #ff5a5f; }
+
+.apiConfig-holder .top-bar {
+  overflow: hidden; }
+  .apiConfig-holder .top-bar .btn-setup {
+    height: 36px;
+    display: block;
+    margin: 5px 15px; }
+  .apiConfig-holder .top-bar .api-file-filter {
+    width: 250px;
+    margin: 5px 15px;
+    height: 36px; }
+    .apiConfig-holder .top-bar .api-file-filter .api-file-filter-input {
+      height: 36px; }
+
+.apiConfig-holder .apiConfig-mid-holder {
+  height: calc(100% - 40px - 46px - 46px);
+  width: 100%;
+  overflow-x: visible;
+  overflow-y: auto;
+  padding-top: 20px;
+  text-align: center; }
+  .apiConfig-holder .apiConfig-mid-holder .api-holder {
+    display: inline-block;
+    width: 90%;
+    height: 130px;
+    margin-bottom: 30px;
+    color: #fff;
+    border: 1px solid #fff;
+    -webkit-box-shadow: 0 0 3px #bebebe;
+    -moz-box-shadow: 0 0 3px #bebebe;
+    -o-box-shadow: 0 0 3px #bebebe;
+    -ms-box-shadow: 0 0 3px #bebebe;
+    box-shadow: 0 0 3px #bebebe;
+    text-align: left; }
+    .apiConfig-holder .apiConfig-mid-holder .api-holder .api-text {
+      padding-left: 15px; }
+    .apiConfig-holder .apiConfig-mid-holder .api-holder .api-url-text {
+      padding-top: 5px; }
+    .apiConfig-holder .apiConfig-mid-holder .api-holder .api-location-text {
+      margin-top: 20px; }
+    .apiConfig-holder .apiConfig-mid-holder .api-holder .api-date-text {
+      margin-top: 2px; }
+      .apiConfig-holder .apiConfig-mid-holder .api-holder .api-date-text .api-update-date {
+        margin-left: 20px; }
+    .apiConfig-holder .apiConfig-mid-holder .api-holder .edit-icon {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer; }
+    .apiConfig-holder .apiConfig-mid-holder .api-holder .status-icon {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 15px;
+      right: 40px;
+      cursor: pointer; }
+    .apiConfig-holder .apiConfig-mid-holder .api-holder .api-expand-text {
+      position: absolute;
+      right: 15px;
+      bottom: 7px;
+      text-decoration: underline;
+      cursor: pointer; }
+    .apiConfig-holder .apiConfig-mid-holder .api-holder .api-collapse-text {
+      position: absolute;
+      right: 15px;
+      top: 40px;
+      text-decoration: underline;
+      cursor: pointer; }
+    .apiConfig-holder .apiConfig-mid-holder .api-holder .api-generate-code-text {
+      position: absolute;
+      right: 85px;
+      top: 40px;
+      text-decoration: underline;
+      cursor: pointer; }
+    .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder {
+      padding: 5px 15px 5px 15px;
+      color: #87919f;
+      height: 429px; }
+      .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .detail-param-icon {
+        margin-right: 5px;
+        cursor: pointer; }
+      .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .detail-param-icon-down {
+        margin-right: 2px; }
+      .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-detected-params-holder {
+        width: calc(50% - 4px);
+        min-height: 300px;
+        padding-right: 15px; }
+      .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .detail-detected-params-hide {
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+        padding-right: 0; }
+      .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder {
+        width: 50%;
+        min-height: 300px;
+        padding-left: 15px;
+        border-left: 1px solid #e4e4e4; }
+        .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .btn-result-json-expand {
+          position: absolute;
+          top: 0;
+          right: 10px; }
+        .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .detail-expected-result-editor {
+          height: 258px;
+          width: calc(100% - 10px);
+          margin-left: 10px; }
+        .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .ace_print-margin {
+          display: none; }
+        .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .tab-content {
+          height: 259px;
+          width: calc(100% + 10px);
+          margin-left: -10px;
+          overflow-y: auto;
+          overflow-x: visible; }
+        .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .expected-result-col-holder {
+          width: 100%;
+          margin-top: 5px;
+          padding-left: 24px; }
+          .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .expected-result-col-holder .btn-field-remove {
+            -webkit-border-radius: 7px;
+            -moz-border-radius: 7px;
+            -o-border-radius: 7px;
+            -ms-border-radius: 7px;
+            border-radius: 7px;
+            width: 15px;
+            height: 15px;
+            background-color: #dcdcdc;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            top: 10px;
+            left: 5px;
+            cursor: pointer; }
+          .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .expected-result-col-holder .caret {
+            margin-left: 10px; }
+          .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .expected-result-col-holder .json-num {
+            width: 35px;
+            display: inline-block; }
+        .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .expected-result-col-1 {
+          width: 200px;
+          padding-right: 10px; }
+        .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .expected-result-col-2 {
+          width: 190px; }
+        .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .expected-result-col-3 {
+          width: 100%;
+          margin-top: 5px; }
+        .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .expected-result-col-3-expand {
+          width: calc(100% - 390px); }
+        .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .deail-expected-result-holder .btn-new-field {
+          margin-top: 5px;
+          margin-left: 24px; }
+      .apiConfig-holder .apiConfig-mid-holder .api-holder .api-detail-holder .detail-expected-result-expand {
+        width: 100%;
+        padding-left: 0px;
+        border-left: none; }
+  .apiConfig-holder .apiConfig-mid-holder .api-holder-expand {
+    background-color: #fff !important; }
+  .apiConfig-holder .apiConfig-mid-holder .api-holder-disabled {
+    background-color: #9c9b9d !important; }
+  .apiConfig-holder .apiConfig-mid-holder .api-holder-get {
+    background-color: #69b5a3; }
+  .apiConfig-holder .apiConfig-mid-holder .api-holder-post {
+    background-color: #04a0be; }
+  .apiConfig-holder .apiConfig-mid-holder .api-holder-put {
+    background-color: #ed8032; }
+  .apiConfig-holder .apiConfig-mid-holder .api-holder-delete {
+    background-color: #ff5a5f; }

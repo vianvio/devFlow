@@ -56,7 +56,7 @@
     "lastUpdatedBy": {
       "type": "belongsTo",
       "model": "userModel",
-      "foreignKey": "lastUpdatedBy"
+      "foreignKey": "lastUpdatedById"
     },
     "lockedBy": {
       "type": "belongsTo",

@@ -1,6 +1,6 @@
 {
-  "name": "projectShare",
-  "plural": "projectShares",
+  "name": "apiFieldInfo",
+  "plural": "apiFieldInfos",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -10,14 +10,24 @@
     "TimeStamp": true,
     "AddUserInfo": true
   },
-  "properties": {},
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "minItems": {
+      "type": "number"
+    },
+    "maxItems": {
+      "type": "number"
+    }
+  },
   "validations": [],
   "relations": {
-    "project": {
-      "type": "belongsTo",
-      "model": "project",
-      "foreignKey": "projectId"
-    },
     "owner": {
       "type": "belongsTo",
       "model": "userModel",
@@ -28,15 +38,10 @@
       "model": "userModel",
       "foreignKey": "lastUpdatedById"
     },
-    "sharedUser": {
+    "apiConfig": {
       "type": "belongsTo",
-      "model": "userModel",
-      "foreignKey": "sharedUserId"
-    },
-    "chatRoom": {
-      "type": "belongsTo",
-      "model": "chatRoom",
-      "foreignKey": ""
+      "model": "apiConfig",
+      "foreignKey": "apiConfigId"
     }
   },
   "acls": [

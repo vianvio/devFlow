@@ -9,18 +9,18 @@ module.exports = function(Model, options) {
       if (!ctx.isNewInstance) {
         // update
         if (ctx.instance) {
-          ctx.instance.lastUpdatedBy = ctx.options.userId;
+          ctx.instance.lastUpdatedById = ctx.options.userId;
         } else {
-          ctx.data.lastUpdatedBy = ctx.options.userId;
+          ctx.data.lastUpdatedById = ctx.options.userId;
         }
       } else {
         // create
         if (ctx.instance) {
           ctx.instance.ownerId = ctx.options.userId;
-          ctx.instance.lastUpdatedBy = ctx.options.userId;
+          ctx.instance.lastUpdatedById = ctx.options.userId;
         } else {
           ctx.data.ownerId = ctx.options.userId;
-          ctx.data.lastUpdatedBy = ctx.options.userId;
+          ctx.data.lastUpdatedById = ctx.options.userId;
         }
       }
     }
@@ -37,7 +37,8 @@ module.exports = function(Model, options) {
     // debug('before create: ' + ctx.args.data + ', ' + ctx.req.accessToken + ', ' + ctx.req.accessToken.userId);
     if (ctx.args.data && ctx.req.accessToken && ctx.req.accessToken.userId) {
       ctx.args.data.ownerId = ctx.req.accessToken.userId;
-      ctx.args.data.lastUpdatedBy = ctx.req.accessToken.userId;
+      ctx.args.data.lastUpdatedById = ctx.req.accessToken.userId;
+      debug(JSON.stringify(ctx.args.data));
     }
     next();
   });
@@ -48,7 +49,7 @@ module.exports = function(Model, options) {
       return next();
     }
     if (ctx.args.data && ctx.req.accessToken && ctx.req.accessToken.userId) {
-      ctx.args.data.lastUpdatedBy = ctx.req.accessToken.userId;
+      ctx.args.data.lastUpdatedById = ctx.req.accessToken.userId;
     }
     next();
   });
@@ -61,7 +62,7 @@ module.exports = function(Model, options) {
     }
     if (ctx.args.data && ctx.req.accessToken && ctx.req.accessToken.userId) {
       ctx.args.data.forEach(function(item) {
-        item.lastUpdatedBy = ctx.req.accessToken.userId;
+        item.lastUpdatedById = ctx.req.accessToken.userId;
       });
     }
     next();

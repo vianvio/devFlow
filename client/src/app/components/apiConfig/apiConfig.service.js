@@ -1,24 +1,44 @@
 angular.module('devCooperation')
-  .factory('welcomeService', ['$http', '$q', 'Session', 'api', function($http, $q, Session, api) {
-    var welcomeService = {};
+  .factory('apiConfigService', ['$http', '$q', 'Session', 'api', function($http, $q, Session, api) {
+    var apiConfigService = {};
     var apiRoute = api.isDev ? api.devRoute : api.proRoute;
-    welcomeService.getProjectList = function() {
+    apiConfigService.getApiList = function(projectId) {
       var deferred = $q.defer();
-      $http.get(apiRoute + '/projects?filter[include]=owner&filter[where][ownerId]=' + Session.currentUser().userId).then(function(res) {
+      $http.get(apiRoute + '/apiConfigs?filter[include]=owner&filter[include]=lastUpdatedBy&filter[include]=apiMethod&filter[include]=apiFieldInfos&filter[where][projectId]=' + projectId).then(function(res) {
         deferred.resolve(res.data);
       }, deferred.reject);
 
       return deferred.promise;
     };
 
-    welcomeService.getSharedProjectList = function() {
+    apiConfigService.changeApiStatus = function(updatedApiConfigObj) {
       var deferred = $q.defer();
-      $http.get(apiRoute + '/projectShares?filter[where][sharedUserId]=' + Session.currentUser().userId + '&filter[include][project]=owner').then(function(res) {
+      $http.put(apiRoute + '/apiConfigs', updatedApiConfigObj).then(function(res) {
         deferred.resolve(res.data);
       }, deferred.reject);
 
       return deferred.promise;
     };
 
-    return welcomeService;
+    apiConfigService.updateApiObj = function(updatedApiConfigObj) {
+      var deferred = $q.defer();
+      $http.put(apiRoute + '/apiConfigs', updatedApiConfigObj).then(function(res) {
+        deferred.resolve(res.data);
+      }, deferred.reject);
+
+      return deferred.promise;
+    };
+
+    apiConfigService.updateApiFields = function(newFields) {
+      var deferred = $q.defer();
+      $http.post(apiRoute + '/apiFieldInfos', newFields).then(function(res) {
+        deferred.resolve(res.data);
+      }, function(res) {
+        deferred.resolve(res.data.error);
+      });
+
+      return deferred.promise;
+    };
+
+    return apiConfigService;
   }]);

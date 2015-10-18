@@ -1,5 +1,37 @@
 @import '../../mixin';
-.welcome-holder {
+.apiConfig-holder {
+    .project-title-bar {
+        border-bottom: 1px solid $ida-e4e;
+        @include box-shadow(0 0 4px $ida-dcd);
+        color: $ida-879;
+        @extend %font-20-semibold;
+        padding-left: 15px;
+        .project-tab-holder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            .project-tab {
+                display: inline-block;
+                cursor: pointer;
+                margin: 0 30px 0 30px;
+                @extend %font-14-semibold;
+            }
+            .project-tab-current {
+                &:after {
+                    content: ' ';
+                    position: absolute;
+                    width: calc(100% + 20px);
+                    left: -10px;
+                    bottom: 3px;
+                    height: 2px;
+                    background-color: $ida-ff5;
+                }
+            }
+        }
+    }
     .top-bar {
         @extend %top-bar;
         overflow: hidden;
@@ -9,42 +41,211 @@
             display: block;
             margin: 5px 15px;
         }
+        .api-file-filter {
+            width: 250px;
+            margin: 5px 15px;
+            height: 36px;
+            .api-file-filter-input {
+                height: 36px;
+            }
+        }
     }
-    .welcome-mid-holder {
-        height: calc(100% - #{$foot-height} - #{$top-bar-height});
-        padding-bottom: $foot-height + 5; // for foot bar
+    .apiConfig-mid-holder {
+        height: calc(100% - #{$foot-height} - #{$top-bar-height} - #{$top-bar-height});
         width: 100%;
         overflow-x: visible;
         overflow-y: auto;
         padding-top: 20px;
-        .welcome-mid-inner-holder {
-            width: 1024px;
-            margin: 0 auto;
-            .project-holder {
-                text-align: left;
-                height: 250px;
-                padding: 10px;
-                .project-inner-holder {
-                    width: 100%;
-                    height: 100%;
-                    border: 1px solid $ida-e4e;
-                    background-color: $ida-fff;
-                    @include border-radius(4px);
-                    @extend %click-effect;
-                    cursor: pointer;
-                    padding: 15px;
-                    .project-title-holder {
-                        height: 40px;
-                        width: 100%;
-                        @extend %font-16-regular;
-                        color: $ida-879;
-                    }
-                    .project-share-icon {
-                        font-size: 25px;
-                        color: $ida-879;
-                    }
+        text-align: center;
+        .api-holder {
+            display: inline-block;
+            width: 90%;
+            height: 130px;
+            margin-bottom: 30px;
+            color: $ida-fff;
+            border: 1px solid $ida-fff;
+            @include box-shadow(0 0 3px $ida-beb);
+            text-align: left;
+            .api-text {
+                padding-left: 15px;
+            }
+            .api-url-text {
+                padding-top: 5px;
+                @extend %font-24-regular;
+            }
+            .api-method-text {
+                @extend %font-16-regular;
+            }
+            .api-location-text {
+                @extend %font-14-regular;
+                margin-top: 20px;
+            }
+            .api-date-text {
+                margin-top: 2px;
+                @extend %font-14-regular;
+                .api-update-date {
+                    margin-left: 20px;
                 }
             }
+            .edit-icon {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                cursor: pointer;
+            }
+            .status-icon {
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: 15px;
+                right: 40px;
+                cursor: pointer;
+            }
+            .api-expand-text {
+                position: absolute;
+                right: 15px;
+                bottom: 7px;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            .api-collapse-text {
+                position: absolute;
+                right: 15px;
+                top: 40px;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            .api-generate-code-text {
+                position: absolute;
+                right: 85px;
+                top: 40px;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            .api-detail-holder {
+                padding: 5px 15px 5px 15px;
+                @extend %font-14-regular;
+                color: $ida-879;
+                height: 429px;
+                label {
+                    @extend %font-18-light;
+                }
+                .api-url-example {
+                    @extend %font-12-light;
+                }
+                .detail-param-icon {
+                    margin-right: 5px;
+                    cursor: pointer;
+                }
+                .detail-param-icon-down {
+                    margin-right: 2px;
+                }
+                .deail-detected-params-holder {
+                    width: calc(50% - 4px);
+                    min-height: 300px;
+                    padding-right: 15px;
+                }
+                .detail-detected-params-hide {
+                    width: 0px;
+                    height: 0px;
+                    overflow: hidden;
+                    padding-right: 0;
+                }
+                .deail-expected-result-holder {
+                    width: 50%;
+                    min-height: 300px;
+                    padding-left: 15px;
+                    border-left: 1px solid $ida-e4e;
+                    .btn-result-json-expand {
+                        position: absolute;
+                        top: 0;
+                        right: 10px;
+                    }
+                    .detail-expected-result-editor {
+                        height: 258px;
+                        width: calc(100% - 10px);
+                        margin-left: 10px;
+                    }
+                    .ace_print-margin {
+                        display: none;
+                    }
+                    .tab-content{
+                        height: 259px;
+                        width: calc(100% + 10px);
+                        margin-left: -10px;
+                        overflow-y: auto;
+                        overflow-x: visible;
+                    }
+                    .expected-result-col-holder {
+                        width: 100%;
+                        margin-top: 5px;
+                        padding-left: 24px;
+                        .btn-field-remove {
+                            @include border-radius(7px);
+                            width: 15px;
+                            height: 15px;
+                            background-color: $ida-dcd;
+                            color: $ida-fff;
+                            text-align: center;
+                            position: absolute;
+                            top: 10px;
+                            left: 5px;
+                            cursor: pointer;
+                            @extend %click-effect;
+                        }
+                        .caret {
+                            margin-left: 10px;
+                        }
+                        .json-num {
+                            width: 35px;
+                            display: inline-block;
+                        }
+                    }
+                    .expected-result-col-1 {
+                        width: 200px;
+                        padding-right: 10px;
+                    }
+                    .expected-result-col-2 {
+                        width: 190px;
+                    }
+                    .expected-result-col-3 {
+                        width: 100%;
+                        margin-top: 5px;
+                    }
+                    .expected-result-col-3-expand {
+                        width: calc(100% - 390px);
+                    }
+                    .btn-new-field {
+                        margin-top: 5px;
+                        margin-left: 24px;
+                    }
+                }
+                .detail-expected-result-expand {
+                    width: 100%;
+                    padding-left: 0px;
+                    border-left: none;
+                }
+            }
+        }
+        .api-holder-expand {
+            background-color: $ida-fff !important;
+        }
+        .api-holder-disabled {
+            background-color: $ida-9c9 !important;
+        }
+        .api-holder-get {
+            background-color: $ida-69b;
+        }
+        .api-holder-post {
+            background-color: $ida-04a;
+        }
+        .api-holder-put {
+            background-color: $ida-ed8;
+        }
+        .api-holder-delete {
+            background-color: $ida-ff5;
         }
     }
 }

@@ -1,7 +1,7 @@
 .project-holder .project-mid-holder .project-file-info-holder .project-file-info {
   font-family: 'opensans-light-webfont'; }
 
-.project-holder .top-bar .btn-setup {
+.project-holder .project-title-bar .project-tab-holder .project-tab, .project-holder .top-bar .btn-setup, .project-holder .project-title-bar {
   font-family: 'opensans-semibold-webfont'; }
 
 .project-holder .project-mid-holder .project-team-info-holder .project-team-info {
@@ -10,8 +10,14 @@
 .project-holder .project-mid-holder .project-file-info-holder .project-file-info {
   font-size: 14px; }
 
+.project-holder .project-title-bar .project-tab-holder .project-tab {
+  font-size: 14px; }
+
 .project-holder .top-bar .btn-setup {
   font-size: 16px; }
+
+.project-holder .project-title-bar {
+  font-size: 20px; }
 
 .project-holder .project-mid-holder .project-team-info-holder .project-team-info {
   font-size: 10px; }
@@ -40,9 +46,37 @@
   line-height: 46px;
   width: 100%; }
 
+.project-holder .project-title-bar {
+  border-bottom: 1px solid #e4e4e4;
+  -webkit-box-shadow: 0 0 4px #dcdcdc;
+  -moz-box-shadow: 0 0 4px #dcdcdc;
+  -o-box-shadow: 0 0 4px #dcdcdc;
+  -ms-box-shadow: 0 0 4px #dcdcdc;
+  box-shadow: 0 0 4px #dcdcdc;
+  color: #87919f;
+  padding-left: 15px; }
+  .project-holder .project-title-bar .project-tab-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center; }
+    .project-holder .project-title-bar .project-tab-holder .project-tab {
+      display: inline-block;
+      cursor: pointer;
+      margin: 0 30px 0 30px; }
+    .project-holder .project-title-bar .project-tab-holder .project-tab-current:after {
+      content: ' ';
+      position: absolute;
+      width: calc(100% + 20px);
+      left: -10px;
+      bottom: 3px;
+      height: 2px;
+      background-color: #ff5a5f; }
+
 .project-holder .top-bar {
-  overflow: hidden;
-  line-height: normal; }
+  overflow: hidden; }
   .project-holder .top-bar .btn-setup {
     height: 36px;
     margin: 5px 0px 5px 15px; }
@@ -53,7 +87,7 @@
 .project-holder .project-mid-holder {
   text-align: center;
   width: 100%;
-  height: calc(100% - 40px);
+  height: calc(100% - 40px - 46px);
   padding-bottom: 45px;
   overflow-x: hidden;
   overflow-y: auto; }

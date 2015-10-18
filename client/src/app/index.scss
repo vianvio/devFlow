@@ -108,6 +108,11 @@ button {
     height: 100%;
 }
 
+.dropdown-menu {
+    height: 200px;
+    overflow: auto;
+}
+
 .current-tab-line2 {
     color: $ida-ff5;
     display: inline-block;

@@ -4,7 +4,7 @@
     </div>
     <div class='welcome-mid-holder'>
         <div class='welcome-mid-inner-holder'>
-            <div class='project-holder col-xs-4' ng-repeat='project in arrProjects track by $index' ng-click='openProject(project.id, project.ownerId)'>
+            <div class='project-holder col-xs-4' ng-repeat='project in arrProjects track by $index' ng-click='openProject(project)'>
                 <div class='project-inner-holder'>
                     <div class='project-title-holder text-ellipsis'>
                         Project Name : {{project.name}}
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            <div class='project-holder col-xs-4' ng-repeat='project in arrSharedProjects track by $index' ng-click='openProject(project.id, project.ownerId)'>
+            <div class='project-holder col-xs-4' ng-repeat='project in arrSharedProjects track by $index' ng-click='openProject(project)'>
                 <div class='project-inner-holder'>
                     <div class='project-title-holder text-ellipsis'>
                         Project Name : {{project.name}}
