@@ -3,11 +3,6 @@
 angular.module('devCooperation')
   .controller('navbarCtrl', ['$scope', '$rootScope', 'Session', '$state', '$location', '$modal',
     function($scope, $rootScope, Session, $state, $location, $modal) {
-      // $scope.logout = function() {
-      //   Session.destroy();
-      //   $scope.currentUser = null;
-      //   $state.go('login');
-      // }
       $scope.currentTabIndex = 0;
       $scope.showSignoutPanel = false;
 

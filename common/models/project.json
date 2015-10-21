@@ -23,6 +23,9 @@
     },
     "projectFile": {
       "type": "string"
+    },
+    "angularModuleName": {
+      "type": "string"
     }
   },
   "validations": [],

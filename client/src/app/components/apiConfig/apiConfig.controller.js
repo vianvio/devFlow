@@ -2,37 +2,6 @@
 
 angular.module('devCooperation').controller('apiConfigCtrl', ['$scope', '$rootScope', '$modal', '$state', 'apiConfigService', 'localStorageService',
   function($scope, $rootScope, $modal, $state, apiConfigService, localStorageService) {
-    $scope.editorMode = {
-      mode: 'json'
-    };
-    $scope.arrFieldType = [
-      'Boolean',
-      'City',
-      'Country',
-      'Company Name',
-      'Country Code',
-      'Currency',
-      'Custom List',
-      'Date',
-      'Domain Name',
-      'Email Address',
-      'First Name',
-      'Full Name',
-      'Gender',
-      'Given Name (Chinese)',
-      'GUID',
-      'IP Address v4',
-      'Job Title',
-      'JSON Array',
-      'Language',
-      'Last Name',
-      'Latitude',
-      'Longitude',
-      'Number',
-      'Paragraphs',
-      'Phone',
-      'Row Number'
-    ];
     var initialize = function() {
       $scope.arrApis = [];
       $scope.apiFileFilter = '';
@@ -45,13 +14,28 @@ angular.module('devCooperation').controller('apiConfigCtrl', ['$scope', '$rootSc
             obj.bShowParams = true;
           }
           if (obj.apiFieldInfos) {
+            obj.apiResultSuccessFieldInfos = [];
+            obj.apiResultFailFieldInfos = [];
+            obj.apiSendFieldInfos = [];
             obj.apiFieldInfos.forEach(function(field) {
               delete field.apiConfigId;
               delete field.createdAt;
               delete field.updatedAt;
               delete field.id;
+              if (field.fieldInfoType === 'resultSuccess') {
+                delete field.fieldInfoType;
+                obj.apiResultSuccessFieldInfos.push(field);
+              } else if (field.fieldInfoType === 'resultFail') {
+                delete field.fieldInfoType;
+                obj.apiResultFailFieldInfos.push(field);
+              } else if (field.fieldInfoType === 'send') {
+                delete field.fieldInfoType;
+                obj.apiSendFieldInfos.push(field);
+              }
             });
-            obj.expectedResultJson = JSON.stringify(obj.apiFieldInfos, null, '\t');
+            obj.expectedResultSuccessJson = JSON.stringify(obj.apiResultSuccessFieldInfos, null, '\t');
+            obj.expectedResultFailJson = JSON.stringify(obj.apiResultFailFieldInfos, null, '\t');
+            obj.expectedSendJson = JSON.stringify(obj.apiSendFieldInfos, null, '\t');
           }
         });
         $scope.arrApis = data;
@@ -64,16 +48,6 @@ angular.module('devCooperation').controller('apiConfigCtrl', ['$scope', '$rootSc
       });
     };
 
-    $scope.changeApiStatus = function(apiIndex, isDisabled) {
-      apiConfigService.changeApiStatus({
-        id: $scope.arrApis[apiIndex].id,
-        isDisabled: isDisabled
-      }).then(function(data) {
-        $scope.arrApis[apiIndex].isDisabled = data.isDisabled;
-        $scope.arrApis[apiIndex].updatedAt = data.updatedAt;
-      });
-    };
-
     $scope.getApiHolderColor = function(api) {
       var _result = '';
       if (api.isExpand) {
@@ -82,73 +56,6 @@ angular.module('devCooperation').controller('apiConfigCtrl', ['$scope', '$rootSc
         _result = 'api-holder-disabled';
       }
       return _result;
-    };
-
-    $scope.expandHolder = function(apiIndex) {
-      $scope.arrApis[apiIndex].isExpand = true;
-      angular.element('#holder-' + $scope.arrApis[apiIndex].id).stop().animate({
-        height: '490px'
-      }, 300);
-    };
-
-    $scope.collapseHolder = function(apiIndex) {
-      $scope.arrApis[apiIndex].isExpand = false;
-      angular.element('#holder-' + $scope.arrApis[apiIndex].id).stop().animate({
-        height: '130px'
-      }, 300);
-    };
-
-    $scope.addNewField = function(apiIndex) {
-      if ($scope.arrApis[apiIndex].apiFieldInfos) {
-        $scope.arrApis[apiIndex].apiFieldInfos.push({});
-      } else {
-        $scope.arrApis[apiIndex].apiFieldInfos = [{
-          name: 'id',
-          type: 'Row Number' // first field, default to row number. ==> id in db
-        }];
-      }
-      // console.log($scope.arrApis[apiIndex]);
-      // TODO: format to json and display in editor
-
-    };
-
-    $scope.getParams = function(apiIndex) {
-      $scope.arrApis[apiIndex].arrParams = $scope.arrApis[apiIndex].urlWithParams.match(/{\w+}/gi);
-    };
-
-    $scope.saveApiDetail = function(api, apiIndex) {
-      var _apiObjStatus = false,
-        _newFieldStatus = false;
-      // format the api obj
-      var _updateAPIObj = {
-        id: api.id,
-        urlWithParams: api.urlWithParams,
-        succeededResRoute: api.succeededResRoute,
-        failedResRoute: api.failedResRoute
-      };
-      apiConfigService.updateApiObj(_updateAPIObj).then(function(data) {
-        _apiObjStatus = true;
-        if (_newFieldStatus) $scope.collapseHolder(apiIndex);
-        $scope.arrApis[apiIndex].updatedAt = data.updatedAt; // only update the date, others are the same
-      });
-      // always delete all the fields and create new ones.
-      // will also create sample data
-      var _newFields = [];
-      api.apiFieldInfos.forEach(function(field) {
-        if (field.name) {
-          delete field.isTypeOpen;
-          field.apiConfigId = api.id;
-          if (field.type === 'JSON Array') {
-            field.minItems = parseInt(field.minItems);
-            field.maxItems = parseInt(field.maxItems);
-          }
-          _newFields.push(field);
-        }
-      });
-      apiConfigService.updateApiFields(_newFields).then(function(data) {
-        _newFieldStatus = true;
-        if (_apiObjStatus) $scope.collapseHolder(apiIndex);
-      });
     };
 
     $scope.createAPI = function() {
@@ -169,3 +76,16 @@ angular.module('devCooperation').controller('apiConfigCtrl', ['$scope', '$rootSc
     initialize();
   }
 ]);
+// only can show the json. but cannot bind together
+// .filter('formatACEString', function($filter) {
+//   return function(apiFieldInfos, apiIndex) {
+//     apiFieldInfos.forEach(function(field) {
+//       delete field.apiConfigId;
+//       delete field.createdAt;
+//       delete field.updatedAt;
+//       delete field.id;
+//       delete field.isTypeOpen;
+//     });
+//     return JSON.stringify(apiFieldInfos, null, '\t');
+//   }
+// });

@@ -1,4 +1,4 @@
-<div class="content-holder login-container login-img" ng-controller="LoginController">
+<div class="content-holder login-container" ng-controller="LoginController">
     <form name="loginForm" class="form-signin" role="form">
         <div class="login-content">Sign In</div>
         <div class="form-item-msg alert alert-danger" ng-show="loginFailed">
@@ -6,24 +6,21 @@
         </div>
         <div class="form-group" ng-class='currentInput==="username" ? "input-focus" : ""'>
             <div class="icon fa fa-user"></div>
-            <input class="form-control nombrelogin" name="username" placeholder="Username/Guid" autocomplete='off' ng-model="credentials.username" ng-focus="currentInput='username'" required autofocus>
+            <input class="form-control nombrelogin" name="username" placeholder="Username" autocomplete='off' ng-model="credentials.username" ng-focus="currentInput='username'" required autofocus>
         </div>
         <div class="form-group" ng-class='currentInput==="password" ? "input-focus" : ""'>
             <div class="icon fa fa-unlock"></div>
             <input type="password" class="form-control" name="password" placeholder="Password" ng-model="credentials.password" ng-focus="currentInput='password'" required>
         </div>
         <div class="form-group">
-            <button class="btn btn-default secondary-color sign-in" data-ng-click="login(credentials)"><span ng-if="!showLoading">SIGN IN</span><div ng-if="showLoading"><div class="loader"></div></div></button>
+            <button class="btn btn-default secondary-color sign-in" data-ng-click="login(credentials)"><span ng-if="!showLoading">SIGN IN</span>
+                <div ng-if="showLoading">
+                    <div class="loader"></div>
+                </div>
+            </button>
         </div>
         <p class="new-account-content" ng-click='register()'>Create a New Account</p>
     </form>
-    <div class="powered-content">
-        <div class='powered-content-holder'>
-        <span>Created by </span>
-        <div class="pwc-small-logo pwc-logo-img"></div>
-        <span> Vian</span>
-        </div>
-    </div>
 </div>
 <script type="text/ng-template" id="modal.html">
     <div class="modal-header">

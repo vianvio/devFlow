@@ -1,0 +1,78 @@
+<div class='api-holder-{{api.apiMethod.name | lowercase}}' ng-class='api.isDisabled ? "api-holder-disabled" : ""'>
+    <div class='api-text api-url-text'>{{api.apiMethod.name}} /{{api.route}}</div>
+    <div class='api-text api-method-text'>{{api.serviceName}}.{{api.methodName}}</div>
+    <div class='fa fa-floppy-o edit-icon' title='Click to save' ng-click='saveApiDetail()'></div>
+    <div class='fa fa-pause status-icon' title='Click to disable the API' ng-if='!api.isDisabled' ng-click='changeApiStatus(true)'></div>
+    <div class='fa fa-play status-icon' title='Click to enable the API' ng-if='api.isDisabled' ng-click='changeApiStatus(false)'></div>
+    <div class='api-collapse-text' ng-if='api.isExpand' ng-click='collapseHolder()'>Collapse</div>
+</div>
+<div ng-if='!api.isExpand'>
+    <!-- <div class='api-text api-location-text'>Location: src/app/components/{{api.name}}/{{api.name}}.service.js</div> -->
+    <div class='api-text api-location-text'>&nbsp</div>
+    <div class='api-text api-date-text'>
+        <span>Created At : {{api.createdAt | date: 'yyyy-MM-dd'}}</span>
+        <span class='api-update-date'>Updated At : {{api.updatedAt | date: 'yyyy-MM-dd'}}</span>
+    </div>
+    <div class='api-expand-text' ng-click='expandHolder()'>Expand</div>
+</div>
+<div class='api-detail-holder' ng-if='api.isExpand'>
+    <label for="api-full-url">Full URL <span class='api-url-example'>(Ex. /test?id={id}&owner={owner})</span></label>
+    <div id='api-full-url' class="input-group">
+        <span class="input-group-addon" id="server-route-text">/{{api.route}}?</span>
+        <input type="text" class="form-control api-file-filter-input" placeholder="URL with Parameters" autocomplete='off' ng-model='api.urlWithParams' aria-describedby="server-route-text" ng-keyup='getParams()'>
+    </div>
+    <hr/>
+    <div class='deail-detected-params-holder pull-left' ng-class='api.bResultJsonExpand ? "detail-detected-params-hide" : ""'>
+        <div><span class='fa detail-param-icon' ng-class='api.bShowParams ? "detail-param-icon-down fa-caret-down" : "fa-caret-right"' ng-click='api.bShowParams = !api.bShowParams'></span>Parameter List :</div>
+        <span ng-repeat='param in api.arrParams' ng-if='api.bShowParams'>{{param}}<br/></span>
+        <hr/>
+        <label for="api-full-url">Succeeded response data route <span class='api-url-example'>(Ex. Response.data)</span></label>
+        <div id='api-full-url' class="input-group">
+            <span class="input-group-addon" id="server-route-text">Response.</span>
+            <input type="text" class="form-control api-file-filter-input" autocomplete='off' ng-model='api.succeededResRoute' aria-describedby="server-route-text">
+        </div>
+        <hr/>
+        <label for="api-full-url">Failed response data route <span class='api-url-example'>(Ex. Response.error.data)</span></label>
+        <div id='api-full-url' class="input-group">
+            <span class="input-group-addon" id="server-route-text">Response.</span>
+            <input type="text" class="form-control api-file-filter-input" autocomplete='off' ng-model='api.failedResRoute' aria-describedby="server-route-text">
+        </div>
+    </div>
+    <div class='deail-expected-result-holder pull-left position-relative' ng-class='api.bResultJsonExpand ? "detail-expected-result-expand" : ""'>
+        <button class='btn btn-primary btn-result-json-expand' ng-click='api.bResultJsonExpand = !api.bResultJsonExpand'>{{api.bResultJsonExpand ? "Collapse" : "Expand"}}</button>
+        <uib-tabset>
+            <uib-tab heading="Expected Result">
+                <div class='expected-result-col-holder pull-left'>
+                    <div class='expected-result-col-1 pull-left'>Field Name</div>
+                    <div class='expected-result-col-2 pull-left'>Type</div>
+                    <div class='expected-result-col-3-expand pull-left' ng-if='api.bResultJsonExpand'>Options</div>
+                </div>
+                <div class='expected-result-col-holder pull-left position-relative' ng-repeat='field in api.apiResultSuccessFieldInfos track by $index'>
+                    <div class='fa fa-times btn-field-remove' ng-click='api.apiResultSuccessFieldInfos.splice($index, 1)'></div>
+                    <div class='expected-result-col-1 pull-left'>
+                        <input type='text' class='form-control' autocomplete='off' ng-model='field.name' />
+                    </div>
+                    <div class="btn-group pull-left expected-result-col-2" uib-dropdown dropdown-append-to-body is-open="field.isTypeOpen">
+                        <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle>
+                            <span class='dropdown-text'>{{field.type}}</span><span class="caret"></span>
+                        </button>
+                        <ul class="uib-dropdown-menu" role="menu" aria-labelledby="single-button">
+                            <li role="menuitem" ng-repeat='fieldType in arrFieldType track by $index'>
+                                <a href ng-click='field.type = fieldType'>{{fieldType}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class='pull-left' ng-class='api.bResultJsonExpand ? "expected-result-col-3-expand" : "expected-result-col-3"' ng-if='field.type === "JSON Array"'>
+                        min items:
+                        <input type='text' class='form-control json-num' ng-model='field.minItems' /> max items:
+                        <input type='text' class='form-control json-num' ng-model='field.maxItems' />
+                    </div>
+                </div>
+                <button class='btn btn-success btn-new-field' ng-click='addNewField()'>Add New Field</button>
+            </uib-tab>
+            <uib-tab heading="Json editor">
+                <div class='detail-expected-result-editor' ui-ace='editorMode' ng-model='api.expectedResultSuccessJson'></div>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+</div>

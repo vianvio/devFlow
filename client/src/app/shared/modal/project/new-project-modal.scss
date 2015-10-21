@@ -4,7 +4,7 @@
         height: 100%;
         .modal-content {
             width: 100%;
-            @include screen-center(600px, 317px, 0, 100px);
+            @include screen-center(600px, 441px, 0, 100px);
             .create-button {
                 @include horizontal-center(120px, 0);
             }

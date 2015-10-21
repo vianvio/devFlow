@@ -1,0 +1,17 @@
+.show-code-form .modal-dialog {
+  height: 100%;
+  width: 800px; }
+  .show-code-form .modal-dialog .modal-content {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    margin-top: -250px;
+    position: relative;
+    left: 50%;
+    margin-left: -400px; }
+    .show-code-form .modal-dialog .modal-content .create-button {
+      position: relative;
+      left: 50%;
+      margin-left: -100px;
+      margin-top: 10px;
+      width: 200px; }

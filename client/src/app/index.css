@@ -15,10 +15,6 @@ textarea {
 .hexagon-num {
   font-size: 24px; }
 
-.login-img, .inner-page-img, .pwc-logo-img, .ida-logo-img, .setup-client-img, .conduct-session-img, .create-decision-img, .session-animation-gif, .decision-animation-gif {
-  background-position: center;
-  background-repeat: no-repeat; }
-
 button:hover {
   -webkit-box-shadow: 0 0 4px #87919f;
   -moz-box-shadow: 0 0 4px #87919f;
@@ -159,33 +155,6 @@ textarea {
 .hexagon-num {
   top: 13px; }
 
-.login-img {
-  background-image: url("../assets/images/Background.png"); }
-
-.inner-page-img {
-  background-image: url("../assets/images/InnerPageBG2.png"); }
-
-.pwc-logo-img {
-  background-image: url("../assets/images/PWCLogo.png"); }
-
-.ida-logo-img {
-  background-image: url("../assets/images/IDALogo.png"); }
-
-.setup-client-img {
-  background-image: url("../assets/images/SetupYourClient.png"); }
-
-.conduct-session-img {
-  background-image: url("../assets/images/ConductInterviewSessions.png"); }
-
-.create-decision-img {
-  background-image: url("../assets/images/CreatePreviewDecisions.png"); }
-
-.session-animation-gif {
-  background-image: url("../assets/images/SessionsAnimation.gif"); }
-
-.decision-animation-gif {
-  background-image: url("../assets/images/DecisionsAnimation.gif"); }
-
 .loader {
   display: inline-block;
   height: 22px !important;
@@ -315,53 +284,40 @@ textarea {
   width: 100%;
   top: 0px;
   z-index: 9999; }
-  .loading-modal .global-loader {
-    top: 40%;
-    left: 50%;
-    display: inline-block;
-    height: 22px !important;
-    width: 22px !important;
-    font-size: 10px;
-    margin: 0px auto;
-    margin-top: 3px;
-    text-indent: -9999em;
-    width: 11em;
-    height: 11em;
-    border-radius: 50%;
-    background: #ff5a5f;
-    background: -moz-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
-    background: -webkit-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
-    background: -o-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
-    background: -ms-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
-    background: linear-gradient(to right, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
-    position: relative;
-    -webkit-animation: load3 0.3s infinite linear;
-    animation: load3 0.3s infinite linear;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    transform: translateZ(0); }
-  .loading-modal .global-loader:before {
-    width: 50%;
-    height: 50%;
-    background: #ff5a5f;
-    border-radius: 100% 0 0 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: ''; }
-  .loading-modal .global-loader:after {
-    background: #ffffff;
-    width: 75%;
-    height: 75%;
-    border-radius: 50%;
-    content: '';
-    margin: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0; }
 
-/**
- * multiselectinput form end
- */
+.global-loader {
+  top: 40%;
+  left: 50%;
+  display: inline-block;
+  height: 22px !important;
+  width: 22px !important;
+  font-size: 10px;
+  margin: 0px auto;
+  margin-top: 3px;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  border: 3px solid #ff5a5f;
+  border-top: none !important;
+  border-right: none;
+  border-bottom: none;
+  position: relative;
+  -webkit-animation: load3 0.3s infinite linear;
+  animation: load3 0.3s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0); }
+
+.global-loader:before {
+  width: 50%;
+  height: 50%;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  border: 3px solid #ff5a5f;
+  border-left: none;
+  border-right: none;
+  border-bottom: none; }

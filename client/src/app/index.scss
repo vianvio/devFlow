@@ -166,51 +166,6 @@ button {
     @extend %font-24-semibold;
 }
 
-.login-img {
-    background-image: url("../assets/images/Background.png");
-    @extend %img-center-no-repeat
-}
-
-.inner-page-img {
-    background-image: url('../assets/images/InnerPageBG2.png');
-    @extend %img-center-no-repeat
-}
-
-.pwc-logo-img {
-    background-image: url("../assets/images/PWCLogo.png");
-    @extend %img-center-no-repeat
-}
-
-.ida-logo-img {
-    background-image: url('../assets/images/IDALogo.png');
-    @extend %img-center-no-repeat
-}
-
-.setup-client-img {
-    background-image: url('../assets/images/SetupYourClient.png');
-    @extend %img-center-no-repeat
-}
-
-.conduct-session-img {
-    background-image: url('../assets/images/ConductInterviewSessions.png');
-    @extend %img-center-no-repeat
-}
-
-.create-decision-img {
-    background-image: url('../assets/images/CreatePreviewDecisions.png');
-    @extend %img-center-no-repeat
-}
-
-.session-animation-gif {
-    background-image: url('../assets/images/SessionsAnimation.gif');
-    @extend %img-center-no-repeat
-}
-
-.decision-animation-gif {
-    background-image: url('../assets/images/DecisionsAnimation.gif');
-    @extend %img-center-no-repeat
-}
-
 .loader {
     display: inline-block;
     height: 22px !important;
@@ -348,24 +303,6 @@ button {
     top: 16px;
 }
 
-// .dropdown-menu.dropdown-menu-form li.inactive a >.glyphicon {
-//     color: #ccc !important;
-// }
-// .dropdown-menu.dropdown-menu-form li.onactive a {
-//     color: #29a6ba !important;
-// }
-// .search-field-loading {
-//     background: url('../images/loading-small.gif') no-repeat center;
-//     position: absolute;
-//     top: -2px;
-//     right: 10px;
-//     z-index: 170;
-//     color: red;
-//     font-weight: normal;
-//     display: none;
-//     width: 40px;
-//     height: 40px;
-// }
 .dropdown-menu.dropdown-menu-form li:nth-child(1),
 .dropdown-menu.dropdown-menu-form li:nth-child(2) {
     float: left;
@@ -381,72 +318,43 @@ button {
     width: 100%;
     top: 0px;
     z-index: 9999;
-    .global-loader {
-        top: 40%;
-        left: 50%;
-        display: inline-block;
-        height: 22px !important;
-        width: 22px !important;
-        font-size: 10px;
-        margin: 0px auto;
-        margin-top: 3px;
-        text-indent: -9999em;
-        width: 11em;
-        height: 11em;
-        border-radius: 50%;
-        background: #ff5a5f;
-        background: -moz-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
-        background: -webkit-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
-        background: -o-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
-        background: -ms-linear-gradient(left, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
-        background: linear-gradient(to right, #ff5a5f 10%, rgba(255, 255, 255, 0) 42%);
-        position: relative;
-        -webkit-animation: load3 0.3s infinite linear;
-        animation: load3 0.3s infinite linear;
-        -webkit-transform: translateZ(0);
-        -ms-transform: translateZ(0);
-        transform: translateZ(0);
-    }
-    .global-loader:before {
-        width: 50%;
-        height: 50%;
-        background: #ff5a5f;
-        border-radius: 100% 0 0 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        content: '';
-    }
-    .global-loader:after {
-        background: #ffffff;
-        width: 75%;
-        height: 75%;
-        border-radius: 50%;
-        content: '';
-        margin: auto;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-    }
 }
 
-// .dropdown-menu.dropdown-menu-form {
-//     max-height: 360px;
-//     overflow: auto;
-// }
-// .multiselect-parent .glyphicon-ok.active {
-//     color: #fff;
-//     background-color: #33A0B6;
-//     line-height: inherit;
-// }
-// .dropdown-menu.dropdown-menu-form .radio,
-// .dropdown-menu.dropdown-menu-form .checkbox {
-//     margin-top: 0;
-//     margin-bottom: 0;
-// }
+.global-loader {
+    top: 40%;
+    left: 50%;
+    display: inline-block;
+    height: 22px !important;
+    width: 22px !important;
+    font-size: 10px;
+    margin: 0px auto;
+    margin-top: 3px;
+    text-indent: -9999em;
+    width: 11em;
+    height: 11em;
+    border-radius: 50%;
+    border: 3px solid $ida-ff5;
+    border-top: none !important;
+    border-right: none;
+    border-bottom: none;
+    position: relative;
+    -webkit-animation: load3 0.3s infinite linear;
+    animation: load3 0.3s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+}
 
-/**
- * multiselectinput form end
- */
+.global-loader:before {
+    width: 50%;
+    height: 50%;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    border: 3px solid $ida-ff5;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}

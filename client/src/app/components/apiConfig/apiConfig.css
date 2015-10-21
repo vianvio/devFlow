@@ -89,7 +89,7 @@
   .apiConfig-holder .top-bar .btn-setup {
     height: 36px;
     display: block;
-    margin: 5px 15px; }
+    margin: 5px 0px 0 15px; }
   .apiConfig-holder .top-bar .api-file-filter {
     width: 250px;
     margin: 5px 15px;
@@ -150,12 +150,6 @@
     .apiConfig-holder .apiConfig-mid-holder .api-holder .api-collapse-text {
       position: absolute;
       right: 15px;
-      top: 40px;
-      text-decoration: underline;
-      cursor: pointer; }
-    .apiConfig-holder .apiConfig-mid-holder .api-holder .api-generate-code-text {
-      position: absolute;
-      right: 85px;
       top: 40px;
       text-decoration: underline;
       cursor: pointer; }

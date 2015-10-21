@@ -1,0 +1,21 @@
+<script type="text/ng-template" id="new-file.html">
+    <div class="close-button fa fa-times" ng-click="cancel()"></div>
+    <div class="modal-header">
+        <div class="modal-title">New File</div>
+    </div>
+    <div class="modal-body">
+        <form name="newFileForm" id="new-file-form" class="form" role="form">
+            <alert ng-if='createFailed' type="danger">{{errorMsg}}</alert>
+            <div class="form-group" ng-class="{'has-error': submitted && newFileForm.name.$invalid}">
+                <label for="project-name">Project Name</label>
+                <input class="form-control" id="project-name" name="name" autocomplete='off' ng-model="newProjectObj.name" required autofocus>
+            </div>
+            <button class="create-button submit-button" ng-click="">
+                <span ng-if="!showLoading">CREATE</span>
+                <div ng-if="showLoading">
+                    <div class="loader"></div>
+                </div>
+            </button>
+        </form>
+    </div>
+</script>

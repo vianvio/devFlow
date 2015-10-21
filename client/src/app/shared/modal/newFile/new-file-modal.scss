@@ -1,0 +1,16 @@
+@import '../../../mixin';
+.show-code-form {
+    .modal-dialog {
+        height: 100%;
+        width: 800px;
+        .modal-content {
+            width: 100%;
+            @include screen-center(800px, 400px, 0, 100px);
+            .create-button {
+                @include horizontal-center(200px, 0);
+                margin-top: 10px;
+                width: 200px;
+            }
+        }
+    }
+}

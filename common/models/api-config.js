@@ -1,7 +1,31 @@
 var Mockaroo = require('mockaroo');
 var debug = require('debug')('devflow:api-config.js');
+var fs = require('fs');
+var sugar = require('sugar');
 
 module.exports = function(ApiConfig) {
+  var _getServiceBodyContent = function(apiConfig) {
+    var _strServiceBody = fs.readFileSync(__dirname + '/' + '../../server/jsTemplates/serviceBody.template.js', "utf-8");
+    // place info
+    // get params first
+    var _arrParams = apiConfig.urlWithParams.match(/{\w+}/gi);
+    var _arrParamsFormated = [];
+    _arrParams.forEach(function(param) {
+      _arrParamsFormated.push(param.replace(/{|}/g, ''));
+    });
+    _strServiceBody = _strServiceBody.assign({
+      serviceName: apiConfig.serviceName,
+      methodName: apiConfig.methodName,
+      params: _arrParamsFormated.join(', '),
+      paramsInUrl: apiConfig.urlWithParams.substring(0, apiConfig.urlWithParams.length - 1).replace(/{/g, "' + ").replace(/}/g, " + '"),
+      apiRoute: apiConfig.route,
+      failedResRoute: apiConfig.failedResRoute,
+      succeededResRoute: apiConfig.succeededResRoute,
+      httpMethod: apiConfig.apiMethod().name.toLowerCase()
+    });
+    return _strServiceBody;
+  };
+
   ApiConfig.afterRemote('create', function(ctx, apiConfig, next) {
     ctx.result = {
       bError: false,
@@ -9,6 +33,54 @@ module.exports = function(ApiConfig) {
       result: apiConfig
     }
     next();
+  });
+
+  ApiConfig.afterRemote('upsert', function(ctx, apiConfig, next) {
+    // get project info
+    var _angularModuleName = '';
+    ApiConfig.app.models.Project.findById(apiConfig.projectId, function(err, project) {
+      if (err) next(err);
+      _angularModuleName = project.angularModuleName;
+      // TODO: find api by http method
+      ApiConfig.find({
+        where: {
+          or: [{
+            name: apiConfig.name,
+            urlWithParams: {
+              like: '.+'
+            },
+            succeededResRoute: {
+              like: '.+'
+            },
+            failedResRoute: {
+              like: '.+'
+            },
+            isDisabled: {
+              neq: true
+            }
+          }]
+        },
+        include: ['apiMethod']
+      }, function(err, arrApiConfig) {
+        if (err) next(err);
+        var _arrBodyContent = [];
+        arrApiConfig.forEach(function(apiConfigItem) {
+          _arrBodyContent.push(_getServiceBodyContent(apiConfigItem));
+        });
+
+        var _strServiceHeader = fs.readFileSync(__dirname + '/' + '../../server/jsTemplates/serviceHeader.template.js', "utf-8");
+        _strServiceHeader = _strServiceHeader.assign({
+          moduleName: _angularModuleName,
+          serviceName: apiConfig.serviceName,
+          serviceContent: _arrBodyContent.join('\n\n')
+        });
+        debug(_strServiceHeader);
+        // save to file
+        
+      });
+
+      next();
+    });
   });
 
   ApiConfig.observe('before save', function(ctx, next) {

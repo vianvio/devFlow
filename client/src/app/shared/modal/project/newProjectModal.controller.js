@@ -13,13 +13,7 @@ angular.module('devCooperation')
         $scope.newProjectForm.submitted = true;
         $scope.showLoading = true;
         if ($scope.newProjectForm.$valid) {
-          // for now we need to format the industry id into array
-          var _projectObj = {
-            name: $scope.newProjectObj.name,
-            description: $scope.newProjectObj.description
-          };
-
-          modalProjectService.createProject(_projectObj).then(function(data) {
+          modalProjectService.createProject($scope.newProjectObj).then(function(data) {
             // success
             if (!data.bError) {
               $modalInstance.close();
